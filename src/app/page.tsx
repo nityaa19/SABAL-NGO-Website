@@ -9,10 +9,10 @@ export default function Home() {
       <section className="bg-background">
         <div className="container mx-auto px-4 py-24 md:py-32 text-center">
           <h1 className="text-4xl md:text-5xl font-headline font-bold tracking-tight">
-            Let’s be a Volunteer of HUMANITY
+            Let’s be a Volunteer of Humanity
           </h1>
           <h1 className="text-4xl md:text-[2.8rem] lg:text-5xl font-headline font-bold tracking-tight mt-2">
-            Let’s be a Volunteer of RESPONSIBILITY
+            Let’s be a Volunteer of Responsibility
           </h1>
           <h2 className="mt-4 text-5xl md:text-6xl font-headline font-bold tracking-tight text-primary uppercase">
             Let’s be a Volunteer of SABAL
@@ -68,7 +68,7 @@ export default function Home() {
               </div>
               <div className="relative min-h-[400px]">
                 <Image
-                  src="/landing-page/objective.jpg"
+                  src="https://picsum.photos/seed/1/600/400"
                   alt="Objective"
                   width={600}
                   height={400}
@@ -84,7 +84,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 items-stretch">
               <div className="relative min-h-[400px] order-last md:order-first">
                 <Image
-                  src="/landing-page/mission.jpg"
+                  src="https://picsum.photos/seed/2/600/400"
                   alt="Mission"
                   width={600}
                   height={400}
@@ -124,7 +124,7 @@ export default function Home() {
               </div>
               <div className="relative min-h-[400px]">
                 <Image
-                  src="/landing-page/vision.jpg"
+                  src="https://picsum.photos/seed/3/600/400"
                   alt="Vision"
                   width={600}
                   height={400}
