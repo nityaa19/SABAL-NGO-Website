@@ -1,13 +1,9 @@
 import { Button } from '@/components/ui/button';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home() {
-  const objectiveImage = PlaceHolderImages.find((img) => img.id === 'objective-image');
-  const missionImage = PlaceHolderImages.find((img) => img.id === 'mission-image');
-  const visionImage = PlaceHolderImages.find((img) => img.id === 'vision-image');
-  
+
   const values = [
     {
       title: 'HUMANITY',
@@ -68,16 +64,14 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              {objectiveImage && (
                 <Image
-                  src={objectiveImage.imageUrl}
-                  alt={objectiveImage.description}
+                  src="/landing-page/objective.jpg"
+                  alt="Objective"
                   width={600}
                   height={400}
                   className="w-full h-full object-cover"
-                  data-ai-hint={objectiveImage.imageHint}
+                  data-ai-hint="community project"
                 />
-              )}
             </div>
             <div>
               <h2 className="text-3xl md:text-4xl font-headline font-bold">Objective</h2>
@@ -93,16 +87,14 @@ export default function Home() {
         <div className="container mx-auto px-4">
            <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
             <div className="order-1 md:order-2 rounded-lg overflow-hidden shadow-lg">
-               {missionImage && (
                 <Image
-                  src={missionImage.imageUrl}
-                  alt={missionImage.description}
+                  src="/landing-page/mission.jpg"
+                  alt="Mission"
                   width={600}
                   height={400}
                   className="w-full h-full object-cover"
-                  data-ai-hint={missionImage.imageHint}
+                  data-ai-hint="unity hands"
                 />
-              )}
             </div>
             <div className="order-2 md:order-1">
               <h2 className="text-3xl md:text-4xl font-headline font-bold">Mission</h2>
@@ -118,16 +110,14 @@ export default function Home() {
         <div className="container mx-auto px-4">
            <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
             <div className="rounded-lg overflow-hidden shadow-lg">
-               {visionImage && (
                 <Image
-                  src={visionImage.imageUrl}
-                  alt={visionImage.description}
+                  src="/landing-page/vision.jpg"
+                  alt="Vision"
                   width={600}
                   height={400}
                   className="w-full h-full object-cover"
-                  data-ai-hint={visionImage.imageHint}
+                  data-ai-hint="hopeful sunrise"
                 />
-              )}
             </div>
             <div>
               <h2 className="text-3xl md:text-4xl font-headline font-bold">Vision</h2>
