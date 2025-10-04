@@ -1,7 +1,7 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
-import { useEffect, useRef } from 'react';
+import { useActionState, useEffect, useRef, useState } from 'react';
+import { useFormStatus } from 'react-dom';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -30,10 +30,10 @@ function SubmitButton() {
 
 export default function BloodDonationForm() {
   const initialState: BloodDonationFormState = { message: '', errors: {}, success: false };
-  const [state, formAction] = useFormState(submitBloodDonationForm, initialState);
+  const [state, formAction] = useActionState(submitBloodDonationForm, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
-  const [dob, setDob] = React.useState<Date>();
+  const [dob, setDob] = useState<Date>();
 
   useEffect(() => {
     if (state.success) {
