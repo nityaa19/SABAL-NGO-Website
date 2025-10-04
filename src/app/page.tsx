@@ -8,10 +8,10 @@ export default function Home() {
     <div className="flex flex-col">
       <section className="bg-background">
         <div className="container mx-auto px-4 py-24 md:py-32 text-center">
-          <h1 className="text-4xl md:text-5xl font-headline font-bold tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-headline tracking-tight">
             Let’s Be a Volunteer of Humanity
           </h1>
-          <h1 className="text-4xl md:text-[2.8rem] lg:text-5xl font-headline font-bold tracking-tight mt-2">
+          <h1 className="text-4xl md:text-[2.8rem] lg:text-5xl font-headline tracking-tight mt-2">
             Let’s Be a Volunteer of Responsibility
           </h1>
           <h2 className="mt-4 text-5xl md:text-6xl font-headline font-bold tracking-tight text-primary uppercase">
@@ -66,14 +66,12 @@ export default function Home() {
                   </CardContent>
                 </Card>
               </div>
-              <div className="relative min-h-[400px]">
+              <div className="relative min-h-[400px] w-full">
                 <Image
-                  src="https://picsum.photos/seed/1/600/400"
+                  src="/landing-page/objective.png"
                   alt="Objective"
-                  width={600}
-                  height={400}
-                  className="h-full w-full object-cover"
-                  data-ai-hint="community project"
+                  fill
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -82,14 +80,12 @@ export default function Home() {
           {/* Mission Section */}
           <Card className="p-0 shadow-lg border-none overflow-hidden">
             <div className="grid md:grid-cols-2 items-stretch">
-              <div className="relative min-h-[400px] order-last md:order-first">
+              <div className="relative min-h-[400px] w-full order-last md:order-first">
                 <Image
-                  src="https://picsum.photos/seed/2/600/400"
+                  src="/landing-page/mission.png"
                   alt="Mission"
-                  width={600}
-                  height={400}
-                  className="h-full w-full object-cover"
-                  data-ai-hint="unity hands"
+                  fill
+                  className="object-cover"
                 />
               </div>
                <div className="p-8 md:p-12 flex items-center order-first md:order-last">
@@ -122,14 +118,12 @@ export default function Home() {
                   </CardContent>
                 </Card>
               </div>
-              <div className="relative min-h-[400px]">
+              <div className="relative min-h-[400px] w-full">
                 <Image
-                  src="https://picsum.photos/seed/3/600/400"
+                  src="/landing-page/vision.png"
                   alt="Vision"
-                  width={600}
-                  height={400}
-                  className="h-full w-full object-cover"
-                  data-ai-hint="hopeful sunrise"
+                  fill
+                  className="object-cover"
                 />
               </div>
             </div>
