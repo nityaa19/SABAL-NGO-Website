@@ -1,35 +1,28 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Droplets, HeartPulse, Users } from 'lucide-react';
+import { Eye, Goal, Users } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home() {
-  const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-community');
-  const missionImage = PlaceHolderImages.find((img) => img.id === 'mission-image');
+  const heroImage = PlaceHolderImages.find((img) => img.id === 'volunteer-hero');
 
-  const missionPoints = [
+  const values = [
     {
-      icon: <HeartPulse className="h-10 w-10 text-primary" />,
-      title: 'Promoting Health',
-      description: 'We are dedicated to improving community health through awareness campaigns, medical camps, and blood donation drives.',
+      title: 'HUMANITY',
     },
     {
-      icon: <Users className="h-10 w-10 text-primary" />,
-      title: 'Building Community',
-      description: 'Fostering a sense of unity and support by organizing cultural events, workshops, and social gatherings.',
+      title: 'RESPONSIBILITY',
     },
     {
-      icon: <Droplets className="h-10 w-10 text-primary" />,
-      title: 'Saving Lives',
-      description: 'Our blood donation initiatives connect generous donors with those in need, making a direct impact on saving lives.',
+      title: 'SABAL',
     },
   ];
 
   return (
     <div className="flex flex-col">
-      <section className="relative h-[60vh] md:h-[80vh] w-full">
+      <section className="relative h-[70vh] md:h-[90vh] w-full">
         {heroImage && (
           <Image
             src={heroImage.imageUrl}
@@ -40,75 +33,74 @@ export default function Home() {
             data-ai-hint={heroImage.imageHint}
           />
         )}
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
-          <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight">
-            Connecting Hearts, Building Communities
+           <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight">
+            Let’s be a Volunteer of
           </h1>
-          <p className="mt-4 max-w-2xl text-lg md:text-xl text-primary-foreground/80">
-            SABAL is a non-profit organization committed to social welfare, health awareness, and community development.
+           <div className="flex flex-col md:flex-row gap-4 mt-4">
+            {values.map((value) => (
+              <span key={value.title} className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">{value.title}</span>
+            ))}
+          </div>
+
+          <p className="mt-8 max-w-3xl text-lg md:text-xl text-primary-foreground/90">
+            SABAL’s mission is to work for the development and empowerment of socio-economically disadvantaged and vulnerable people in our society and help them according to their poverties-linked issues.
           </p>
           <div className="mt-8 flex gap-4">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              <Link href="/donate-blood">Donate Blood</Link>
+              <Link href="/contact">Join Us</Link>
             </Button>
             <Button asChild size="lg" variant="secondary">
-              <Link href="/contact">Get In Touch</Link>
+              <Link href="/donate-blood">Donate</Link>
             </Button>
           </div>
         </div>
       </section>
-
-      <section id="mission" className="py-16 md:py-24 bg-secondary">
+      
+      <section id="objective" className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-headline font-bold">Our Mission</h2>
-            <p className="mt-2 text-lg text-muted-foreground max-w-3xl mx-auto">
-              To empower individuals and strengthen our community through targeted initiatives in health, education, and social support.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {missionPoints.map((point) => (
-              <Card key={point.title} className="text-center border-none shadow-lg bg-background hover:shadow-xl transition-shadow duration-300">
-                <CardHeader className="items-center">
-                  <div className="p-4 bg-primary/10 rounded-full">{point.icon}</div>
-                  <CardTitle className="pt-4 font-headline">{point.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{point.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-headline font-bold text-secondary">Objective</h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                SABAL – Social Activities Bring Ability & Liberty is a social developmental organization. It’s a private non-profitable organization working for social development of vulnerable and less developed people. It was established by a group of young and energetic people who were highly motivated and committed for contributing their time, skills and energies for the development and empowerment of social disadvantages and vulnerable communities in our society and addressing all the social causes which bars them from their.
+              </p>
+            </div>
+             <div className="flex justify-center">
+               <Users className="h-48 w-48 text-primary opacity-20" />
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
+      <section id="mission" className="py-16 md:py-24 bg-secondary text-secondary-foreground">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
-              <h2 className="text-3xl md:text-4xl font-headline font-bold">What We Do</h2>
-              <p className="mt-4 text-lg text-muted-foreground">
-                SABAL actively engages in a variety of programs designed to make a tangible difference. From organizing life-saving blood donation camps to conducting health and wellness workshops, our goal is to create a healthier, more connected society.
-              </p>
-              <p className="mt-4 text-lg text-muted-foreground">
-                We believe in the power of collective action and strive to provide platforms where everyone can contribute to the well-being of our community.
-              </p>
-              <Button asChild size="lg" className="mt-8">
-                <Link href="/events">See Our Events</Link>
-              </Button>
+           <div className="grid md:grid-cols-2 gap-12 items-center">
+             <div className="flex justify-center order-2 md:order-1">
+               <Goal className="h-48 w-48 text-background opacity-50" />
             </div>
             <div className="order-1 md:order-2">
-              {missionImage && (
-                 <Image
-                    src={missionImage.imageUrl}
-                    alt={missionImage.description}
-                    width={800}
-                    height={600}
-                    className="rounded-lg shadow-2xl object-cover aspect-[4/3]"
-                    data-ai-hint={missionImage.imageHint}
-                  />
-              )}
+              <h2 className="text-3xl md:text-4xl font-headline font-bold">Mission</h2>
+              <p className="mt-4 text-lg">
+                SABAL’s mission is to work for the development and empowerment of socio-economically disadvantaged and vulnerable people in our society and help them according their poverty – linked issues.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="vision" className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4">
+           <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-headline font-bold" style={{color: '#938372'}}>Vision</h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                To inspire and equip masses to reach their divine potential. We believe that only unity can change the destiny of nation, it kills poverty, hunger, injustice and discrimination of all sorts and all human beings can enjoy their basic rights. SABAL envisions a poverty free empowered nation and bring equality and accountability in our society.
+              </p>
+            </div>
+             <div className="flex justify-center">
+               <Eye className="h-48 w-48 text-primary opacity-20" />
             </div>
           </div>
         </div>

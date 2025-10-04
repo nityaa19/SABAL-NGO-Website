@@ -17,6 +17,12 @@
       "description": "A close-up of a blood donation process with a smiling donor.",
       "imageUrl": "https://images.unsplash.com/photo-1615461065624-21b562ee5566?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxibG9vZCUyMGRvbmF0aW9ufGVufDB8fHx8MTc1OTQ5ODk5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "blood donation"
+    },
+    {
+      "id": "volunteer-hero",
+      "description": "A group of happy volunteers with their hands together.",
+      "imageUrl": "https://images.unsplash.com/photo-1531206715666-4c3c1641e8be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx2b2x1bnRlZXJ8ZW58MHx8fHwxNzU5NjAxNjUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "volunteers together"
     }
   ]
 }
