@@ -8,27 +8,26 @@ export default function Home() {
     <div className="flex flex-col">
       <section className="bg-background">
         <div className="container mx-auto px-4 py-24 md:py-32 text-center">
-          <h1 className="text-4xl md:text-[2.8rem] lg:text-5xl font-headline tracking-tight">
-            Let’s Be A Volunteer Of Humanity
-          </h1>
-          <h1 className="text-4xl md:text-[2.8rem] lg:text-5xl font-headline tracking-tight mt-2">
-            Let’s Be A Volunteer Of Responsibility
-          </h1>
-          <h2 className="mt-4 text-5xl md:text-6xl font-headline font-bold tracking-tight text-primary uppercase">
-            Let’s Be A Volunteer Of SABAL
-          </h2>
-
-          <p className="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
-            SABAL’s mission is to work for the development and empowerment of socio-economically disadvantaged and vulnerable people in our society and help them according to their poverties-linked issues.
-          </p>
-          <div className="mt-8 flex gap-4 justify-center">
-            <Button asChild size="lg" className="transition-transform duration-300 hover:scale-105">
-              <Link href="/contact">Join Us</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="transition-transform duration-300 hover:scale-105">
-              <Link href="/donate-blood">Donate</Link>
-            </Button>
-          </div>
+            <h1 className="text-4xl md:text-[2.8rem] lg:text-5xl font-headline tracking-tight">
+                Let’s Be A Volunteer Of Humanity
+            </h1>
+            <h1 className="text-3xl md:text-[2.2rem] lg:text-4xl font-headline tracking-tight mt-2">
+                Let’s Be A Volunteer Of Responsibility
+            </h1>
+            <h2 className="mt-4 text-5xl md:text-6xl font-headline font-bold tracking-tight text-primary uppercase">
+                Let’s Be A Volunteer Of SABAL
+            </h2>
+            <p className="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
+                SABAL’s mission is to work for the development and empowerment of socio-economically disadvantaged and vulnerable people in our society and help them according to their poverties-linked issues.
+            </p>
+            <div className="mt-8 flex gap-4 justify-center">
+                <Button asChild size="lg" className="transition-transform duration-300 hover:scale-105">
+                <Link href="/contact">Join Us</Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="transition-transform duration-300 hover:scale-105">
+                <Link href="/donate-blood">Donate</Link>
+                </Button>
+            </div>
         </div>
       </section>
 
