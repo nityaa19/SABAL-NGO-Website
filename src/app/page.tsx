@@ -8,7 +8,7 @@ export default function Home() {
     <div className="flex flex-col">
       <section className="bg-background">
         <div className="container mx-auto px-4 py-24 md:py-32 text-center">
-          <h1 className="text-4xl md:text-5xl font-headline tracking-tight">
+          <h1 className="text-4xl md:text-[2.8rem] lg:text-5xl font-headline tracking-tight">
             Let’s Be A Volunteer Of Humanity
           </h1>
           <h1 className="text-4xl md:text-[2.8rem] lg:text-5xl font-headline tracking-tight mt-2">
