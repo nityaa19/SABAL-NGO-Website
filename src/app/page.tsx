@@ -1,9 +1,9 @@
 import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home() {
-
   const values = [
     {
       title: 'HUMANITY',
@@ -36,7 +36,7 @@ export default function Home() {
             <Button asChild size="lg">
               <Link href="/contact">Join Us</Link>
             </Button>
-            <Button asChild size="lg" variant="secondary">
+            <Button asChild size="lg" variant="outline">
               <Link href="/donate-blood">Donate</Link>
             </Button>
           </div>
@@ -60,74 +60,93 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="objective" className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
-            <div className="rounded-lg overflow-hidden shadow-lg">
+      <div className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4 space-y-24">
+          {/* Objective Section */}
+          <Card className="p-0 shadow-lg border-none overflow-hidden">
+            <div className="grid md:grid-cols-2 items-stretch">
+              <div className="p-8 md:p-12 flex items-center">
+                <Card className="h-full w-full shadow-md">
+                  <CardHeader>
+                    <CardTitle className="text-3xl md:text-4xl font-headline font-bold">Objective</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-lg text-muted-foreground text-justify">
+                      SABAL – Social Activities Bring Ability & Liberty is a social developmental organization. It’s a non-government, non-profitable organization working for social development of vulnerable and less developed people. It was established by a group of young and energetic people who were highly motivated and committed for contributing their time, skills and energies for the development and empowerment of social disadvantages and vulnerable communities in our society and addressing all the social causes which bars them from their development.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+              <div className="relative min-h-[400px]">
                 <Image
                   src="/landing-page/objective.jpg"
                   alt="Objective"
-                  width={600}
-                  height={400}
-                  className="w-full h-full object-cover"
+                  layout="fill"
+                  objectFit="cover"
+                  className="h-full w-full"
                   data-ai-hint="community project"
                 />
+              </div>
             </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-headline font-bold">Objective</h2>
-              <p className="mt-4 text-lg text-muted-foreground text-justify">
-                SABAL – Social Activities Bring Ability & Liberty is a social developmental organization. It’s a non-government, non-profitable organization working for social development of vulnerable and less developed people. It was established by a group of young and energetic people who were highly motivated and committed for contributing their time, skills and energies for the development and empowerment of social disadvantages and vulnerable communities in our society and addressing all the social causes which bars them from their development.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+          </Card>
 
-      <section id="mission" className="py-16 md:py-24 bg-secondary/10">
-        <div className="container mx-auto px-4">
-           <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
-            <div className="order-1 md:order-2 rounded-lg overflow-hidden shadow-lg">
+          {/* Mission Section */}
+          <Card className="p-0 shadow-lg border-none overflow-hidden">
+            <div className="grid md:grid-cols-2 items-stretch">
+              <div className="relative min-h-[400px] order-1 md:order-2">
                 <Image
                   src="/landing-page/mission.jpg"
                   alt="Mission"
-                  width={600}
-                  height={400}
-                  className="w-full h-full object-cover"
+                  layout="fill"
+                  objectFit="cover"
+                  className="h-full w-full"
                   data-ai-hint="unity hands"
                 />
+              </div>
+               <div className="p-8 md:p-12 flex items-center order-2 md:order-1">
+                <Card className="h-full w-full shadow-md">
+                  <CardHeader>
+                    <CardTitle className="text-3xl md:text-4xl font-headline font-bold">Mission</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-lg text-muted-foreground text-justify">
+                      SABAL’s mission is to work for the development and empowerment of socio-economically disadvantaged and vulnerable people in our society and help them according their poverty–linked issues.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
-            <div className="order-2 md:order-1">
-              <h2 className="text-3xl md:text-4xl font-headline font-bold">Mission</h2>
-              <p className="mt-4 text-lg text-muted-foreground text-justify">
-                SABAL’s mission is to work for the development and empowerment of socio-economically disadvantaged and vulnerable people in our society and help them according their poverty–linked issues.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="vision" className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4">
-           <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
-            <div className="rounded-lg overflow-hidden shadow-lg">
+          </Card>
+          
+          {/* Vision Section */}
+          <Card className="p-0 shadow-lg border-none overflow-hidden">
+            <div className="grid md:grid-cols-2 items-stretch">
+              <div className="p-8 md:p-12 flex items-center">
+                <Card className="h-full w-full shadow-md">
+                  <CardHeader>
+                    <CardTitle className="text-3xl md:text-4xl font-headline font-bold">Vision</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-lg text-muted-foreground text-justify">
+                      To inspire and equip masses to reach their divine potential. We believe that only unity can change the destiny of nation, it kills poverty, hunger, injustice and discrimination of all sorts and all human beings can enjoy their basic rights. SABAL envisions a poverty free empowered nation and bring equality and accountability in our society.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+              <div className="relative min-h-[400px]">
                 <Image
                   src="/landing-page/vision.jpg"
                   alt="Vision"
-                  width={600}
-                  height={400}
-                  className="w-full h-full object-cover"
+                  layout="fill"
+                  objectFit="cover"
+                  className="h-full w-full"
                   data-ai-hint="hopeful sunrise"
                 />
+              </div>
             </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-headline font-bold">Vision</h2>
-              <p className="mt-4 text-lg text-muted-foreground text-justify">
-                To inspire and equip masses to reach their divine potential. We believe that only unity can change the destiny of nation, it kills poverty, hunger, injustice and discrimination of all sorts and all human beings can enjoy their basic rights. SABAL envisions a poverty free empowered nation and bring equality and accountability in our society.
-              </p>
-            </div>
-          </div>
+          </Card>
         </div>
-      </section>
+      </div>
 
       <section className="py-16 md:py-24 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">

@@ -16,12 +16,12 @@ body {
     --popover-foreground: 25 5% 20%;
     --primary: 32 93% 56%; /* Earthy orange */
     --primary-foreground: 0 0% 98%;
-    --secondary: 1 52% 44%; /* Muted reddish orange */
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 30 90% 80%; /* Lighter orange */
+    --secondary-foreground: 25 5% 20%;
     --muted: 30 50% 90%;
     --muted-foreground: 25 5% 45%;
-    --accent: 0 45% 65%; /* Muted reddish orange for accents */
-    --accent-foreground: 0 0% 98%;
+    --accent: 30 90% 85%; /* Light orange for accents */
+    --accent-foreground: 25 5% 20%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 30 20% 85%;
@@ -43,11 +43,11 @@ body {
     --popover-foreground: 30 60% 95%;
     --primary: 32 93% 56%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 1 52% 44%;
+    --secondary: 30 90% 20%;
     --secondary-foreground: 0 0% 98%;
     --muted: 25 5% 15%;
     --muted-foreground: 30 20% 60%;
-    --accent: 0 45% 65%;
+    --accent: 30 90% 25%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
