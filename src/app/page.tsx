@@ -11,10 +11,10 @@ export default function Home() {
           <h1 className="text-4xl md:text-5xl font-headline font-bold tracking-tight">
             Let’s be a Volunteer of HUMANITY
           </h1>
-          <h1 className="text-4xl md:text-5xl font-headline font-bold tracking-tight mt-2">
+          <h1 className="text-4xl md:text-[2.8rem] lg:text-5xl font-headline font-bold tracking-tight mt-2">
             Let’s be a Volunteer of RESPONSIBILITY
           </h1>
-          <h2 className="mt-4 text-5xl md:text-6xl font-headline font-bold tracking-tight text-primary">
+          <h2 className="mt-4 text-5xl md:text-6xl font-headline font-bold tracking-tight text-primary uppercase">
             Let’s be a Volunteer of SABAL
           </h2>
 
@@ -70,9 +70,9 @@ export default function Home() {
                 <Image
                   src="/landing-page/objective.jpg"
                   alt="Objective"
-                  layout="fill"
-                  objectFit="cover"
-                  className="h-full w-full"
+                  width={600}
+                  height={400}
+                  className="h-full w-full object-cover"
                   data-ai-hint="community project"
                 />
               </div>
@@ -86,9 +86,9 @@ export default function Home() {
                 <Image
                   src="/landing-page/mission.jpg"
                   alt="Mission"
-                  layout="fill"
-                  objectFit="cover"
-                  className="h-full w-full"
+                  width={600}
+                  height={400}
+                  className="h-full w-full object-cover"
                   data-ai-hint="unity hands"
                 />
               </div>
@@ -126,9 +126,9 @@ export default function Home() {
                 <Image
                   src="/landing-page/vision.jpg"
                   alt="Vision"
-                  layout="fill"
-                  objectFit="cover"
-                  className="h-full w-full"
+                  width={600}
+                  height={400}
+                  className="h-full w-full object-cover"
                   data-ai-hint="hopeful sunrise"
                 />
               </div>
