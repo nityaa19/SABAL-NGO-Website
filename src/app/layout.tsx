@@ -4,9 +4,10 @@ import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
+import Navbar from '@/components/navbar';
 
 export const metadata: Metadata = {
-  title: 'SABAL Connect',
+  title: 'SABAL - एक सामाजिक संस्था',
   description: 'Connecting Hearts, Building Communities.',
 };
 
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body className={cn('font-body antialiased bg-background text-foreground')}>
         <div className="relative flex min-h-dvh flex-col">
           <Header />
+          <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
         </div>

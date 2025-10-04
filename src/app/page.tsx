@@ -8,26 +8,26 @@ export default function Home() {
     <div className="flex flex-col">
       <section className="bg-background">
         <div className="container mx-auto px-4 py-24 md:py-32 text-center">
-            <h1 className="text-4xl md:text-[2.8rem] lg:text-5xl font-headline tracking-tight">
-                Let’s Be A Volunteer Of Humanity
-            </h1>
-            <h1 className="text-3xl md:text-[2.2rem] lg:text-4xl font-headline tracking-tight mt-2">
-                Let’s Be A Volunteer Of Responsibility
-            </h1>
-            <h2 className="mt-4 text-5xl md:text-6xl font-headline font-bold tracking-tight text-primary uppercase">
-                Let’s Be A Volunteer Of SABAL
-            </h2>
-            <p className="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
-                SABAL’s mission is to work for the development and empowerment of socio-economically disadvantaged and vulnerable people in our society and help them according to their poverties-linked issues.
-            </p>
-            <div className="mt-8 flex gap-4 justify-center">
-                <Button asChild size="lg" className="transition-transform duration-300 hover:scale-105">
-                <Link href="/contact">Join Us</Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="transition-transform duration-300 hover:scale-105">
-                <Link href="/donate-blood">Donate</Link>
-                </Button>
-            </div>
+          <h1 className="text-2xl md:text-3xl font-headline tracking-tight">
+            Let’s Be A Volunteer Of Responsibility
+          </h1>
+          <h1 className="text-3xl md:text-4xl lg:text-[2.8rem] font-headline tracking-tight mt-2">
+            Let’s Be A Volunteer Of Humanity
+          </h1>
+          <h2 className="mt-4 text-5xl md:text-7xl font-headline font-bold tracking-tight text-primary">
+            Let’s Be A Volunteer Of SABAL
+          </h2>
+          <p className="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
+            SABAL’s mission is to work for the development and empowerment of socio-economically disadvantaged and vulnerable people in our society and help them according to their poverties-linked issues.
+          </p>
+          <div className="mt-8 flex gap-4 justify-center">
+            <Button asChild size="lg" className="transition-transform duration-300 hover:scale-105">
+              <Link href="/contact">Join Us</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="transition-transform duration-300 hover:scale-105">
+              <Link href="/donate-blood">Donate</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -38,26 +38,26 @@ export default function Home() {
               <div className="p-8 md:p-12">
                 <h2 className="text-3xl md:text-4xl font-headline font-bold mb-6 text-center md:text-left">About Us</h2>
                 <div className="text-sm text-muted-foreground text-justify space-y-3">
-                    <p>
+                  <p>
                     SABAL – Social Activities Bring Ability & Liberty – is a non-government, non-profitable social developmental organization established in 2016 by a group of young and passionate individuals. With a vision of building an empowered and poverty-free society, SABAL is dedicated to uplifting vulnerable and socio-economically disadvantaged communities.
-                    </p>
-                    <p>
+                  </p>
+                  <p>
                     Since its inception, SABAL has been committed to addressing the root causes that hinder social development, including poverty, hunger, injustice, and discrimination. Our mission is to empower marginalized groups by supporting them in overcoming poverty-linked challenges, ensuring that they gain equal opportunities to grow and thrive.
-                    </p>
-                    <p>
+                  </p>
+                  <p>
                     We strongly believe in the power of unity to bring about change. By inspiring and equipping people to reach their fullest potential, SABAL continues to work towards creating a society where equality, accountability, and human rights are not privileges but the foundation of everyday life.
-                    </p>
+                  </p>
                 </div>
               </div>
               <div className="aspect-video p-4 md:p-8">
-                <iframe 
-                    className="w-full h-full rounded-lg shadow-lg"
-                    src="https://www.youtube-nocookie.com/embed/xyzsstAl2FA?si=0jKN44phQ-ztZjsu" 
-                    title="YouTube video player" 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerPolicy="strict-origin-when-cross-origin" 
-                    allowFullScreen>
+                <iframe
+                  className="w-full h-full rounded-lg shadow-lg"
+                  src="https://www.youtube-nocookie.com/embed/xyzsstAl2FA?si=0jKN44phQ-ztZjsu"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen>
                 </iframe>
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function Home() {
                   className="object-cover"
                 />
               </div>
-               <div className="p-8 md:p-12 flex items-center order-first md:order-last">
+              <div className="p-8 md:p-12 flex items-center order-first md:order-last">
                 <Card className="h-full w-full shadow-md">
                   <CardHeader>
                     <CardTitle className="text-3xl md:text-4xl font-headline font-bold">Mission</CardTitle>

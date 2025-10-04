@@ -6,12 +6,14 @@ import { Button } from './ui/button';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/donate-blood', label: 'Donate Blood' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/blogs', label: 'Blogs' },
   { href: '/events', label: 'Events' },
   { href: '/contact', label: 'Contact Us' },
 ];
 
 const socialLinks = [
-  { icon: <Facebook className="h-5 w-5" />, href: '#', label: 'Facebook' },
+  { icon: <Facebook className="h-5 w-5" />, href: 'https://www.facebook.com/sabal.sasaram', label: 'Facebook' },
   { icon: <Twitter className="h-5 w-5" />, href: '#', label: 'Twitter' },
   { icon: <Instagram className="h-5 w-5" />, href: '#', label: 'Instagram' },
   { icon: <Linkedin className="h-5 w-5" />, href: '#', label: 'LinkedIn' },
@@ -62,7 +64,7 @@ export default function Footer() {
             <div className="flex mt-4 space-x-2">
               {socialLinks.map(({ href, icon, label }) => (
                 <Button key={label} variant="ghost" size="icon" asChild className="text-muted-foreground hover:text-primary hover:bg-primary/10 transition-transform duration-300 hover:scale-110">
-                  <a href={href} aria-label={label}>
+                  <a href={href} aria-label={label} target='_blank' rel='noopener noreferrer'>
                     {icon}
                   </a>
                 </Button>

@@ -47,11 +47,11 @@ export default function ContactPage() {
               </h3>
               <div className="space-y-3">
                 {officeContacts.map((contact, index) => (
-                  <div key={index} className="flex items-center gap-4">
-                    <div className="flex-shrink-0">
+                  <div key={index} className="flex items-center gap-4 group">
+                    <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
                       {contact.icon}
                     </div>
-                    <a href={`tel:${contact.value}`} className="text-lg text-muted-foreground hover:text-primary transition-colors">
+                    <a href={`tel:${contact.value}`} className="text-lg text-muted-foreground group-hover:text-primary transition-colors">
                       <span className="font-semibold">{contact.label}:</span> {contact.value}
                     </a>
                   </div>
@@ -65,11 +65,11 @@ export default function ContactPage() {
               </h3>
               <div className="space-y-3">
                 {emailContacts.map((contact, index) => (
-                  <div key={index} className="flex items-center gap-4">
-                     <div className="flex-shrink-0">
+                  <div key={index} className="flex items-center gap-4 group">
+                     <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
                       {contact.icon}
                     </div>
-                    <a href={`mailto:${contact.value}`} className="text-lg text-muted-foreground hover:text-primary transition-colors">
+                    <a href={`mailto:${contact.value}`} className="text-lg text-muted-foreground group-hover:text-primary transition-colors">
                       {contact.value}
                     </a>
                   </div>
@@ -81,7 +81,7 @@ export default function ContactPage() {
         
         <div className="mt-24">
             <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-8">Our Location</h2>
-            <div className="rounded-lg overflow-hidden shadow-2xl">
+            <div className="rounded-lg overflow-hidden shadow-2xl transition-all duration-300 hover:shadow-primary/20">
                  <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.153790765455!2d84.0143741!3d24.9608817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398db7ebb26b71b1%3A0xecea88f197d18f5f!2sSABAL!5e0!3m2!1sen!2sin!4v1759600912202!5m2!1sen!2sin" 
                     width="100%" 
