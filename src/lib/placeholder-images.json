@@ -1,28 +1,28 @@
 {
   "placeholderImages": [
     {
-      "id": "hero-community",
-      "description": "A group of diverse people working together.",
-      "imageUrl": "https://images.unsplash.com/photo-1706806595136-5afefb45da1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb21tdW5pdHklMjB2b2x1bnRlZXJzfGVufDB8fHx8MTc1OTU5NzE4NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "community volunteers"
-    },
-    {
-      "id": "mission-image",
-      "description": "A person helping another person.",
-      "imageUrl": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxoZWxwaW5nJTIwaGFuZHxlbnwwfHx8fDE3NTk1OTQ1MzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "helping hand"
-    },
-    {
       "id": "blood-donation-hero",
       "description": "A close-up of a blood donation process with a smiling donor.",
-      "imageUrl": "https://images.unsplash.com/photo-1615461065624-21b562ee5566?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxibG9vZCUyMGRvbmF0aW9ufGVufDB8fHx8MTc1OTQ5ODk5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1615461066159-fea0960485d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxibG9vZCUyMGRvbmF0aW9ufGVufDB8fHx8MTc1OTQ5ODk5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "blood donation"
     },
     {
-      "id": "volunteer-hero",
-      "description": "A group of happy volunteers with their hands together.",
-      "imageUrl": "https://images.unsplash.com/photo-1531206715666-4c3c1641e8be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx2b2x1bnRlZXJ8ZW58MHx8fHwxNzU5NjAxNjUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "volunteers together"
+      "id": "objective-image",
+      "description": "A group of volunteers working together on a community project.",
+      "imageUrl": "https://images.unsplash.com/photo-1652811742697-c14964f4ea11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb21tdW5pdHklMjBwcm9qZWN0fGVufDB8fHx8MTc1OTQ5MTk5Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "community project"
+    },
+    {
+      "id": "mission-image",
+      "description": "A diverse group of people with their hands together in a circle.",
+      "imageUrl": "https://images.unsplash.com/photo-1655720359248-eeace8c709c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml0eSUyMGhhbmRzfGVufDB8fHx8MTc1OTU5ODkyM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "unity hands"
+    },
+    {
+      "id": "vision-image",
+      "description": "A person looking out at a hopeful sunrise over a city.",
+      "imageUrl": "https://images.unsplash.com/photo-1742338319026-4c97f99f0d87?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxob3BlZnVsJTIwc3VucmlzZXxlbnwwfHx8fDE3NTk1MTkyNTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hopeful sunrise"
     }
   ]
 }
