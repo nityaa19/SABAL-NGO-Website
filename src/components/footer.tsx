@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin } from 'lucide-react';
 import Logo from './logo';
 import { Button } from './ui/button';
 
@@ -19,7 +19,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary">
+    <footer className="bg-secondary/90">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
@@ -42,20 +42,24 @@ export default function Footer() {
           </div>
           <div className="md:col-span-1">
             <h3 className="font-bold font-headline tracking-wider text-foreground">Contact</h3>
-            <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-              <li>123 Community Lane</li>
-              <li>Welfare City, 45678</li>
-              <li className="pt-2">
-                <a href="tel:123-456-7890" className="hover:text-primary transition-colors">(123) 456-7890</a>
+            <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+               <li className="flex items-start gap-2">
+                 <MapPin className="h-4 w-4 mt-1 shrink-0" />
+                 <span>Govind Nagar, Ward no. 3, Sasaram, Bihar 821113</span>
+               </li>
+              <li className="flex items-center gap-2">
+                <Phone className="h-4 w-4 shrink-0" />
+                <a href="tel:+918936855589" className="hover:text-primary transition-colors">+91-8936855589</a>
               </li>
-              <li>
-                <a href="mailto:contact@sabalconnect.org" className="hover:text-primary transition-colors">contact@sabalconnect.org</a>
+              <li className="flex items-center gap-2">
+                <Mail className="h-4 w-4 shrink-0" />
+                <a href="mailto:sabalngo21@gmail.com" className="hover:text-primary transition-colors">sabalngo21@gmail.com</a>
               </li>
             </ul>
           </div>
           <div className="md:col-span-1">
             <h3 className="font-bold font-headline tracking-wider text-foreground">Follow Us</h3>
-            <div className="flex mt-4 space-x-4">
+            <div className="flex mt-4 space-x-2">
               {socialLinks.map(({ href, icon, label }) => (
                 <Button key={label} variant="ghost" size="icon" asChild className="text-muted-foreground hover:text-primary hover:bg-primary/10 transition-transform duration-300 hover:scale-110">
                   <a href={href} aria-label={label}>
