@@ -17,7 +17,6 @@ import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import { Calendar } from './ui/calendar';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
-import React from 'react';
 
 function SubmitButton() {
   const { pending } = useFormStatus();
