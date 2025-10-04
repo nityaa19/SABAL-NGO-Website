@@ -4,30 +4,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home() {
-  const values = [
-    {
-      title: 'HUMANITY',
-    },
-    {
-      title: 'RESPONSIBILITY',
-    },
-    {
-      title: 'SABAL',
-    },
-  ];
-
   return (
     <div className="flex flex-col">
       <section className="bg-background">
         <div className="container mx-auto px-4 py-24 md:py-32 text-center">
-          <h1 className="text-3xl md:text-5xl font-headline font-bold tracking-tight">
-            Let’s be a Volunteer of
+          <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
+            Ignite Change. Inspire Humanity.
           </h1>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-4">
-            {values.map((value) => (
-              <span key={value.title} className="text-3xl md:text-5xl font-headline font-bold tracking-tight text-primary">{value.title}</span>
-            ))}
-          </div>
+          <h2 className="mt-4 text-3xl md:text-5xl font-headline font-bold tracking-tight">
+            Join the SABAL Movement.
+          </h2>
 
           <p className="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
             SABAL’s mission is to work for the development and empowerment of socio-economically disadvantaged and vulnerable people in our society and help them according to their poverties-linked issues.
@@ -93,7 +79,7 @@ export default function Home() {
           {/* Mission Section */}
           <Card className="p-0 shadow-lg border-none overflow-hidden">
             <div className="grid md:grid-cols-2 items-stretch">
-              <div className="relative min-h-[400px] order-1 md:order-2">
+              <div className="relative min-h-[400px] order-last">
                 <Image
                   src="/landing-page/mission.jpg"
                   alt="Mission"
@@ -103,7 +89,7 @@ export default function Home() {
                   data-ai-hint="unity hands"
                 />
               </div>
-               <div className="p-8 md:p-12 flex items-center order-2 md:order-1">
+               <div className="p-8 md:p-12 flex items-center order-first">
                 <Card className="h-full w-full shadow-md">
                   <CardHeader>
                     <CardTitle className="text-3xl md:text-4xl font-headline font-bold">Mission</CardTitle>
