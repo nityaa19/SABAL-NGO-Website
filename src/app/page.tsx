@@ -9,13 +9,13 @@ export default function Home() {
       <section className="bg-background">
         <div className="container mx-auto px-4 py-24 md:py-32 text-center">
           <h1 className="text-4xl md:text-5xl font-headline tracking-tight">
-            Let's Be A Volunteer Of Humanity
+            Let’s Be A Volunteer Of Humanity
           </h1>
           <h1 className="text-4xl md:text-[2.8rem] lg:text-5xl font-headline tracking-tight mt-2">
-            Let's Be A Volunteer Of Responsibility
+            Let’s Be A Volunteer Of Responsibility
           </h1>
           <h2 className="mt-4 text-5xl md:text-6xl font-headline font-bold tracking-tight text-primary uppercase">
-            Let's Be A Volunteer Of SABAL
+            Let’s Be A Volunteer Of SABAL
           </h2>
 
           <p className="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
@@ -52,7 +52,7 @@ export default function Home() {
               </div>
               <div className="aspect-w-16 aspect-h-9 p-4 md:p-6">
                   <iframe 
-                    className="w-full h-full rounded-lg shadow-md"
+                    className="w-full h-full rounded-lg shadow-xl"
                     src="https://www.youtube.com/embed/DCw_Z4p7s9M" 
                     title="#TeamSABAL #humanity #2022 #birthday #help #support" 
                     frameBorder="0" 
@@ -148,15 +148,15 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
+      <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-headline font-bold">
+          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">
             Become a Part of the Change
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg">
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
             Your support can make a huge difference. Join us in our mission to build a better tomorrow.
           </p>
-          <Button asChild size="lg" variant="secondary" className="mt-8 transition-transform duration-300 hover:scale-105">
+          <Button asChild size="lg" className="mt-8 transition-transform duration-300 hover:scale-105">
             <Link href="/contact">Get Involved</Link>
           </Button>
         </div>
