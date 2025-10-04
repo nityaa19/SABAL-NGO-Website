@@ -34,18 +34,35 @@ export default function Home() {
 
       <section id="about" className="py-16 md:py-24 bg-secondary/10">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-headline font-bold">About Us</h2>
-            <p className="mt-6 text-lg text-muted-foreground text-justify">
-              SABAL – Social Activities Bring Ability & Liberty – is a non-government, non-profitable social developmental organization established in 2016 by a group of young and passionate individuals. With a vision of building an empowered and poverty-free society, SABAL is dedicated to uplifting vulnerable and socio-economically disadvantaged communities.
-            </p>
-            <p className="mt-4 text-lg text-muted-foreground text-justify">
-              Since its inception, SABAL has been committed to addressing the root causes that hinder social development, including poverty, hunger, injustice, and discrimination. Our mission is to empower marginalized groups by supporting them in overcoming poverty-linked challenges, ensuring that they gain equal opportunities to grow and thrive.
-            </p>
-            <p className="mt-4 text-lg text-muted-foreground text-justify">
-              We strongly believe in the power of unity to bring about change. By inspiring and equipping people to reach their fullest potential, SABAL continues to work towards creating a society where equality, accountability, and human rights are not privileges but the foundation of everyday life.
-            </p>
-          </div>
+          <Card className="p-0 shadow-lg border-none overflow-hidden">
+            <div className="grid md:grid-cols-2 items-center">
+              <div className="p-8 md:p-12">
+                <h2 className="text-3xl md:text-4xl font-headline font-bold mb-6 text-center md:text-left">About Us</h2>
+                <div className="text-base text-muted-foreground text-justify space-y-4">
+                    <p>
+                    SABAL – Social Activities Bring Ability & Liberty – is a non-government, non-profitable social developmental organization established in 2016 by a group of young and passionate individuals. With a vision of building an empowered and poverty-free society, SABAL is dedicated to uplifting vulnerable and socio-economically disadvantaged communities.
+                    </p>
+                    <p>
+                    Since its inception, SABAL has been committed to addressing the root causes that hinder social development, including poverty, hunger, injustice, and discrimination. Our mission is to empower marginalized groups by supporting them in overcoming poverty-linked challenges, ensuring that they gain equal opportunities to grow and thrive.
+                    </p>
+                    <p>
+                    We strongly believe in the power of unity to bring about change. By inspiring and equipping people to reach their fullest potential, SABAL continues to work towards creating a society where equality, accountability, and human rights are not privileges but the foundation of everyday life.
+                    </p>
+                </div>
+              </div>
+              <div className="aspect-w-16 aspect-h-9">
+                  <iframe 
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/DCw_Z4p7s9M" 
+                    title="#TeamSABAL #humanity #2022 #birthday #help #support" 
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerPolicy="strict-origin-when-cross-origin" 
+                    allowFullScreen>
+                  </iframe>
+              </div>
+            </div>
+          </Card>
         </div>
       </section>
 
