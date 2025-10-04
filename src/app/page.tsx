@@ -31,25 +31,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="py-16 md:py-24 bg-secondary/10">
+      <section id="about" className="py-16 md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4">
-          <Card className="p-0 shadow-lg border-none overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+          <Card className="p-0 shadow-xl border-none overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-card">
             <div className="grid md:grid-cols-2 items-center">
               <div className="p-8 md:p-12">
                 <h2 className="text-3xl md:text-4xl font-headline font-bold mb-6 text-center md:text-left">About Us</h2>
-                <div className="text-sm text-muted-foreground text-justify space-y-3">
+                <div className="text-base text-muted-foreground text-justify space-y-4">
                   <p>
                     SABAL – Social Activities Bring Ability & Liberty – is a non-government, non-profitable social developmental organization established in 2016 by a group of young and passionate individuals. With a vision of building an empowered and poverty-free society, SABAL is dedicated to uplifting vulnerable and socio-economically disadvantaged communities.
                   </p>
                   <p>
                     Since its inception, SABAL has been committed to addressing the root causes that hinder social development, including poverty, hunger, injustice, and discrimination. Our mission is to empower marginalized groups by supporting them in overcoming poverty-linked challenges, ensuring that they gain equal opportunities to grow and thrive.
                   </p>
-                  <p>
-                    We strongly believe in the power of unity to bring about change. By inspiring and equipping people to reach their fullest potential, SABAL continues to work towards creating a society where equality, accountability, and human rights are not privileges but the foundation of everyday life.
-                  </p>
                 </div>
               </div>
-              <div className="aspect-video p-4 md:p-8">
+              <div className="aspect-video p-4 md:p-6">
                 <iframe
                   className="w-full h-full rounded-lg shadow-lg"
                   src="https://www.youtube-nocookie.com/embed/xyzsstAl2FA?si=0jKN44phQ-ztZjsu"
@@ -71,7 +68,7 @@ export default function Home() {
           <Card className="p-0 shadow-lg border-none overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
             <div className="grid md:grid-cols-2 items-stretch">
               <div className="p-8 md:p-12 flex items-center">
-                <Card className="h-full w-full shadow-md">
+                <div className="w-full">
                   <CardHeader>
                     <CardTitle className="text-3xl md:text-4xl font-headline font-bold">Objective</CardTitle>
                   </CardHeader>
@@ -80,7 +77,7 @@ export default function Home() {
                       SABAL – Social Activities Bring Ability & Liberty is a social developmental organization. It’s a non-government, non-profitable organization working for social development of vulnerable and less developed people. It was established by a group of young and energetic people who were highly motivated and committed for contributing their time, skills and energies for the development and empowerment of social disadvantages and vulnerable communities in our society and addressing all the social causes which bars them from their development.
                     </p>
                   </CardContent>
-                </Card>
+                </div>
               </div>
               <div className="relative min-h-[400px] w-full">
                 <Image
@@ -105,7 +102,7 @@ export default function Home() {
                 />
               </div>
               <div className="p-8 md:p-12 flex items-center order-first md:order-last">
-                <Card className="h-full w-full shadow-md">
+                <div className="w-full">
                   <CardHeader>
                     <CardTitle className="text-3xl md:text-4xl font-headline font-bold">Mission</CardTitle>
                   </CardHeader>
@@ -114,7 +111,7 @@ export default function Home() {
                       SABAL’s mission is to work for the development and empowerment of socio-economically disadvantaged and vulnerable people in our society and help them according their poverty–linked issues.
                     </p>
                   </CardContent>
-                </Card>
+                </div>
               </div>
             </div>
           </Card>
@@ -123,7 +120,7 @@ export default function Home() {
           <Card className="p-0 shadow-lg border-none overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
             <div className="grid md:grid-cols-2 items-stretch">
               <div className="p-8 md:p-12 flex items-center">
-                <Card className="h-full w-full shadow-md">
+                <div className="w-full">
                   <CardHeader>
                     <CardTitle className="text-3xl md:text-4xl font-headline font-bold">Vision</CardTitle>
                   </CardHeader>
@@ -132,7 +129,7 @@ export default function Home() {
                       To inspire and equip masses to reach their divine potential. We believe that only unity can change the destiny of nation, it kills poverty, hunger, injustice and discrimination of all sorts and all human beings can enjoy their basic rights. SABAL envisions a poverty free empowered nation and bring equality and accountability in our society.
                     </p>
                   </CardContent>
-                </Card>
+                </div>
               </div>
               <div className="relative min-h-[400px] w-full">
                 <Image
@@ -147,7 +144,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary/80 to-primary">
+      <section className="py-16 md:py-24 bg-gradient-to-r from-primary/90 to-primary">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary-foreground">
             Become a Part of the Change

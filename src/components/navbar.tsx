@@ -30,9 +30,9 @@ export default function Navbar() {
         href={href}
         onClick={onClick}
         className={cn(
-          'relative text-sm font-medium transition-colors after:absolute after:bottom-[-2px] after:left-0 after:h-0.5 after:w-full after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 after:ease-in-out hover:text-primary hover:after:scale-x-100',
+          'relative text-sm font-medium transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-full after:origin-center after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:text-primary hover:after:scale-x-100',
           isActive ? 'text-primary after:scale-x-100' : 'text-muted-foreground',
-          isMobile && 'text-lg'
+          isMobile && 'text-lg py-2'
         )}
       >
         {label}
@@ -45,11 +45,8 @@ export default function Navbar() {
       <div className="container mx-auto flex h-16 items-center justify-center px-4">
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link, index) => (
-            <div key={link.href} className="flex items-center gap-8">
-              <NavLink href={link.href} label={link.label} />
-              {index < navLinks.length - 1 && <Separator orientation="vertical" className="h-4" />}
-            </div>
+          {navLinks.map((link) => (
+            <NavLink key={link.href} href={link.href} label={link.label} />
           ))}
         </div>
 
@@ -62,9 +59,9 @@ export default function Navbar() {
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full sm:max-w-xs">
+            <SheetContent side="right" className="w-full sm:max-w-xs p-0">
               <div className="flex h-full flex-col">
-                <div className="flex items-center justify-between border-b pb-4">
+                <div className="flex items-center justify-between border-b p-4">
                    <h3 className='font-bold text-lg'>Menu</h3>
                   <SheetTrigger asChild>
                     <Button variant="ghost" size="icon">
@@ -73,7 +70,7 @@ export default function Navbar() {
                     </Button>
                   </SheetTrigger>
                 </div>
-                <div className="mt-8 flex flex-col gap-8">
+                <div className="mt-6 flex flex-col gap-2 px-4">
                   {navLinks.map(({ href, label }) => (
                      <NavLink 
                         key={href}
@@ -84,7 +81,7 @@ export default function Navbar() {
                       />
                   ))}
                 </div>
-                <div className="mt-auto pt-6">
+                <div className="mt-auto p-4 border-t">
                     <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground transition-transform duration-300 hover:scale-105">
                         <Link href="/donate-blood" onClick={() => setMobileMenuOpen(false)}>Donate Now</Link>
                     </Button>
