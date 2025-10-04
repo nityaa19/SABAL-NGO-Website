@@ -8,11 +8,14 @@ export default function Home() {
     <div className="flex flex-col">
       <section className="bg-background">
         <div className="container mx-auto px-4 py-24 md:py-32 text-center">
-          <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
-            Ignite Change. Inspire Humanity.
+          <h1 className="text-4xl md:text-5xl font-headline font-bold tracking-tight">
+            Let’s be a Volunteer of HUMANITY
           </h1>
-          <h2 className="mt-4 text-3xl md:text-5xl font-headline font-bold tracking-tight">
-            Join the SABAL Movement.
+          <h1 className="text-4xl md:text-5xl font-headline font-bold tracking-tight mt-2">
+            Let’s be a Volunteer of RESPONSIBILITY
+          </h1>
+          <h2 className="mt-4 text-5xl md:text-6xl font-headline font-bold tracking-tight text-primary">
+            Let’s be a Volunteer of SABAL
           </h2>
 
           <p className="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
@@ -79,7 +82,7 @@ export default function Home() {
           {/* Mission Section */}
           <Card className="p-0 shadow-lg border-none overflow-hidden">
             <div className="grid md:grid-cols-2 items-stretch">
-              <div className="relative min-h-[400px] order-last">
+              <div className="relative min-h-[400px] order-last md:order-first">
                 <Image
                   src="/landing-page/mission.jpg"
                   alt="Mission"
@@ -89,7 +92,7 @@ export default function Home() {
                   data-ai-hint="unity hands"
                 />
               </div>
-               <div className="p-8 md:p-12 flex items-center order-first">
+               <div className="p-8 md:p-12 flex items-center order-first md:order-last">
                 <Card className="h-full w-full shadow-md">
                   <CardHeader>
                     <CardTitle className="text-3xl md:text-4xl font-headline font-bold">Mission</CardTitle>
