@@ -7,7 +7,7 @@ export default function Logo({ className }: { className?: string }) {
     <Link href="/" className={cn("flex items-center gap-2 group", className)}>
       <HandHeart className="h-7 w-7 text-primary transition-transform group-hover:scale-110" />
       <span className="text-xl font-bold tracking-tight text-foreground font-headline">
-        SABAL Connect
+        SABAL - एक सामाजिक संस्था
       </span>
     </Link>
   );

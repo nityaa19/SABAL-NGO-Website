@@ -57,7 +57,7 @@ export default function Footer() {
             <h3 className="font-bold font-headline tracking-wider text-foreground">Follow Us</h3>
             <div className="flex mt-4 space-x-4">
               {socialLinks.map(({ href, icon, label }) => (
-                <Button key={label} variant="ghost" size="icon" asChild className="text-muted-foreground hover:text-primary hover:bg-primary/10">
+                <Button key={label} variant="ghost" size="icon" asChild className="text-muted-foreground hover:text-primary hover:bg-primary/10 transition-transform duration-300 hover:scale-110">
                   <a href={href} aria-label={label}>
                     {icon}
                   </a>
@@ -67,7 +67,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} SABAL Connect. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} SABAL. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

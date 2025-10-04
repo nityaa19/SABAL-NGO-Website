@@ -22,7 +22,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-secondary/95 backdrop-blur supports-[backdrop-filter]:bg-secondary/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Logo />
 
@@ -40,7 +40,7 @@ export default function Header() {
               {label}
             </Link>
           ))}
-          <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
+          <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground transition-transform duration-300 hover:scale-105">
             <Link href="/donate-blood">Donate Now</Link>
           </Button>
         </nav>
@@ -81,7 +81,7 @@ export default function Header() {
                   ))}
                 </nav>
                 <div className="mt-auto pt-6">
-                    <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                    <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground transition-transform duration-300 hover:scale-105">
                         <Link href="/donate-blood" onClick={() => setMobileMenuOpen(false)}>Donate Now</Link>
                     </Button>
                 </div>

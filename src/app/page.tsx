@@ -9,23 +9,23 @@ export default function Home() {
       <section className="bg-background">
         <div className="container mx-auto px-4 py-24 md:py-32 text-center">
           <h1 className="text-4xl md:text-5xl font-headline tracking-tight">
-            Let’s Be a Volunteer of Humanity
+            Let's Be A Volunteer Of Humanity
           </h1>
           <h1 className="text-4xl md:text-[2.8rem] lg:text-5xl font-headline tracking-tight mt-2">
-            Let’s Be a Volunteer of Responsibility
+            Let's Be A Volunteer Of Responsibility
           </h1>
           <h2 className="mt-4 text-5xl md:text-6xl font-headline font-bold tracking-tight text-primary uppercase">
-            Let’s Be a Volunteer of SABAL
+            Let's Be A Volunteer Of SABAL
           </h2>
 
           <p className="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
             SABAL’s mission is to work for the development and empowerment of socio-economically disadvantaged and vulnerable people in our society and help them according to their poverties-linked issues.
           </p>
           <div className="mt-8 flex gap-4 justify-center">
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="transition-transform duration-300 hover:scale-105">
               <Link href="/contact">Join Us</Link>
             </Button>
-            <Button asChild size="lg" variant="outline">
+            <Button asChild size="lg" variant="outline" className="transition-transform duration-300 hover:scale-105">
               <Link href="/donate-blood">Donate</Link>
             </Button>
           </div>
@@ -34,7 +34,7 @@ export default function Home() {
 
       <section id="about" className="py-16 md:py-24 bg-secondary/10">
         <div className="container mx-auto px-4">
-          <Card className="p-0 shadow-lg border-none overflow-hidden">
+          <Card className="p-0 shadow-lg border-none overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
             <div className="grid md:grid-cols-2 items-center">
               <div className="p-8 md:p-12">
                 <h2 className="text-3xl md:text-4xl font-headline font-bold mb-6 text-center md:text-left">About Us</h2>
@@ -50,9 +50,9 @@ export default function Home() {
                     </p>
                 </div>
               </div>
-              <div className="aspect-w-16 aspect-h-9">
+              <div className="aspect-w-16 aspect-h-9 p-4 md:p-6">
                   <iframe 
-                    className="w-full h-full"
+                    className="w-full h-full rounded-lg shadow-md"
                     src="https://www.youtube.com/embed/DCw_Z4p7s9M" 
                     title="#TeamSABAL #humanity #2022 #birthday #help #support" 
                     frameBorder="0" 
@@ -69,7 +69,7 @@ export default function Home() {
       <div className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 space-y-24">
           {/* Objective Section */}
-          <Card className="p-0 shadow-lg border-none overflow-hidden">
+          <Card className="p-0 shadow-lg border-none overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
             <div className="grid md:grid-cols-2 items-stretch">
               <div className="p-8 md:p-12 flex items-center">
                 <Card className="h-full w-full shadow-md">
@@ -95,7 +95,7 @@ export default function Home() {
           </Card>
 
           {/* Mission Section */}
-          <Card className="p-0 shadow-lg border-none overflow-hidden">
+          <Card className="p-0 shadow-lg border-none overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
             <div className="grid md:grid-cols-2 items-stretch">
               <div className="relative min-h-[400px] w-full order-last md:order-first">
                 <Image
@@ -121,7 +121,7 @@ export default function Home() {
           </Card>
           
           {/* Vision Section */}
-          <Card className="p-0 shadow-lg border-none overflow-hidden">
+          <Card className="p-0 shadow-lg border-none overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
             <div className="grid md:grid-cols-2 items-stretch">
               <div className="p-8 md:p-12 flex items-center">
                 <Card className="h-full w-full shadow-md">
@@ -156,7 +156,7 @@ export default function Home() {
           <p className="mt-4 max-w-2xl mx-auto text-lg">
             Your support can make a huge difference. Join us in our mission to build a better tomorrow.
           </p>
-          <Button asChild size="lg" variant="secondary" className="mt-8">
+          <Button asChild size="lg" variant="secondary" className="mt-8 transition-transform duration-300 hover:scale-105">
             <Link href="/contact">Get Involved</Link>
           </Button>
         </div>
