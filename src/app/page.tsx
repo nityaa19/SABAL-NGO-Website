@@ -9,13 +9,13 @@ export default function Home() {
       <section className="bg-background">
         <div className="container mx-auto px-4 py-24 md:py-32 text-center">
           <h1 className="text-4xl md:text-5xl font-headline font-bold tracking-tight">
-            Let’s be a Volunteer of Humanity
+            Let’s Be A Volunteer Of Humanity
           </h1>
           <h1 className="text-4xl md:text-[2.8rem] lg:text-5xl font-headline font-bold tracking-tight mt-2">
-            Let’s be a Volunteer of Responsibility
+            Let’s Be A Volunteer Of Responsibility
           </h1>
           <h2 className="mt-4 text-5xl md:text-6xl font-headline font-bold tracking-tight text-primary uppercase">
-            Let’s be a Volunteer of SABAL
+            Let’s Be A Volunteer Of SABAL
           </h2>
 
           <p className="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
