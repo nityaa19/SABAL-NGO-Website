@@ -1,5 +1,7 @@
 import ContactForm from '@/components/contact-form';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import React from 'react';
+
 
 export default function ContactPage() {
   const officeContacts = [

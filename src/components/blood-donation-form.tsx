@@ -17,6 +17,7 @@ import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import { Calendar } from './ui/calendar';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
+import React from 'react';
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -80,7 +81,7 @@ export default function BloodDonationForm() {
                 )}
               >
                 <CalendarIcon className="mr-2 h-4 w-4" />
-                {dob ? format(dob, "PPP") : <span>अपनी जन्मतिथि यहाँ लिखें</span>}
+                {dob ? format(dob, "PPP") : <span> अपनी जन्मतिथि यहाँ लिखें</span>}
               </Button>
             </PopoverTrigger>
             <PopoverContent className="w-auto p-0">
