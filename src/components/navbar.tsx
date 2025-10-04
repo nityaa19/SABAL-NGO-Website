@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -41,12 +41,15 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="sticky top-[80px] z-40 w-full border-b bg-background/80 backdrop-blur-sm">
+    <nav className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="container mx-auto flex h-16 items-center justify-center px-4">
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <NavLink key={link.href} href={link.href} label={link.label} />
+          {navLinks.map((link, index) => (
+            <React.Fragment key={link.href}>
+              <NavLink href={link.href} label={link.label} />
+              {index < navLinks.length - 1 && <Separator orientation="vertical" className="h-4" />}
+            </React.Fragment>
           ))}
         </div>
 
