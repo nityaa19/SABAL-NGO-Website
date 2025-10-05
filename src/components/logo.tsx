@@ -13,7 +13,7 @@ export default function Logo({ className }: { className?: string }) {
         className="rounded-full object-cover transition-transform group-hover:scale-110"
       />
       <span className="text-xl font-bold tracking-tight text-foreground font-headline">
-        SABAL - एक सामाजिक संस्था
+        SABAL
       </span>
     </Link>
   );

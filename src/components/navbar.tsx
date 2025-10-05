@@ -42,9 +42,9 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-40 w-full border-b bg-background">
-      <div className="container mx-auto flex h-16 items-center justify-center px-4">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex flex-1 items-center justify-center gap-8">
           {navLinks.map((link, index) => (
             <React.Fragment key={link.href}>
               <NavLink href={link.href} label={link.label} />
@@ -52,6 +52,12 @@ export default function Navbar() {
             </React.Fragment>
           ))}
         </div>
+        <div className="hidden md:block">
+           <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground transition-transform duration-300 hover:scale-105">
+                <Link href="/donate">Donate</Link>
+            </Button>
+        </div>
+
 
         {/* Mobile Navigation */}
         <div className="md:hidden flex-grow flex justify-end">
