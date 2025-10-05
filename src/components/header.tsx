@@ -49,7 +49,7 @@ export default function Header() {
           {navLinks.map((link) => (
             <NavLink key={link.href} href={link.href} label={link.label} />
           ))}
-           <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground transition-transform duration-300 hover:scale-105">
+           <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground transition-transform duration-300 hover:scale-105 ml-4">
                 <Link href="/donate">Donate</Link>
             </Button>
         </nav>
