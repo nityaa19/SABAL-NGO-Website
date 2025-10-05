@@ -3,19 +3,12 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { BadgeCheck, Building, Goal, Target, Eye } from 'lucide-react';
 import Image from 'next/image';
 
-const highlightedKeywords = [
-    'non-government', 'non-profitable', 'development',
-    'socio-economically', 'unity', 'poverty', 'hunger', 'injustice', 'discrimination'
-];
-
 const highlightText = (text: string) => {
-    const parts = text.split(new RegExp(`(#\\w+)`, 'gi'));
+    const parts = text.split(/(poverty|hunger|injustice|discrimination|unity|non-government|non-profitable|development|socio-economically)/gi);
     return parts.map((part, index) => {
-        if (highlightedKeywords.includes(part.replace('#', ''))) {
-            return <span key={index} className="text-primary font-semibold">{part.replace('#', '')}</span>;
-        }
-        if (part.startsWith('#')) {
-             return <span key={index} className="text-primary font-semibold">{part.replace('#', '')}</span>;
+        const keywords = ['poverty', 'hunger', 'injustice', 'discrimination', 'unity', 'non-government', 'non-profitable', 'development', 'socio-economically'];
+        if (keywords.includes(part.toLowerCase())) {
+            return <span key={index} className="text-primary font-semibold">{part}</span>;
         }
         return part;
     });
@@ -85,10 +78,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-16 md:py-24">
-        <div className="space-y-20">
+      <section className="container mx-auto px-4 py-20 md:py-28">
+        <div className="space-y-24">
           {sections.map((section, index) => (
-            <div key={section.title} className={`grid md:grid-cols-2 gap-12 items-center ${index % 2 !== 0 ? 'md:grid-flow-col-dense' : ''}`}>
+            <div key={section.title} className={`grid md:grid-cols-2 gap-16 items-center`}>
                <div className={`overflow-hidden rounded-lg shadow-xl group ${index % 2 !== 0 ? 'md:order-2' : ''}`}>
                 {section.image && (
                     <Image
@@ -102,11 +95,11 @@ export default function AboutPage() {
                 )}
                </div>
               <div className="flex flex-col justify-center">
-                 <div className="flex items-center gap-4 mb-4">
+                 <div className="flex items-center gap-4 mb-6">
                     <div className="p-3 bg-primary/10 rounded-full">{section.icon}</div>
                     <h2 className="text-3xl font-bold md:text-4xl font-headline">{section.title}</h2>
                  </div>
-                <p className="text-lg text-muted-foreground text-justify">
+                <p className="text-lg text-muted-foreground text-justify leading-relaxed">
                     {highlightText(section.description)}
                 </p>
               </div>
@@ -115,17 +108,17 @@ export default function AboutPage() {
         </div>
       </section>
       
-      <section className="bg-secondary/60 py-16 md:py-24">
+      <section className="bg-secondary py-20 md:py-28">
         <div className="container mx-auto px-4">
             <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl font-headline">
                 Our History & Registration
             </h2>
             <div className="grid gap-8 md:grid-cols-3">
                 {registrationDetails.map(detail => (
-                    <Card key={detail.title} className="text-center transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                    <Card key={detail.title} className="text-center transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-xl bg-background">
                         <CardHeader className="items-center">
                            {detail.icon}
-                            <CardTitle className='pt-2 font-headline'>{detail.title}</CardTitle>
+                            <CardTitle className='pt-2 font-headline text-xl'>{detail.title}</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <p className="text-muted-foreground">{detail.description}</p>
