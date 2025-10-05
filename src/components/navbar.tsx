@@ -12,10 +12,10 @@ import { Separator } from './ui/separator';
 
 const navLinks = [
   { href: '/', label: 'Home' },
+  { href: '/#about', label: 'About Us' },
   { href: '/donate-blood', label: 'Donate Blood' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/blogs', label: 'Blogs' },
-  { href: '/events', label: 'Events' },
   { href: '/contact', label: 'Contact Us' },
 ];
 
