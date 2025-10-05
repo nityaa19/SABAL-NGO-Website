@@ -13,6 +13,7 @@ import Logo from './logo';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
+  { href: '/blog', label: 'Blog' },
   { href: '/donate-blood', label: 'Donate Blood' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/contact', label: 'Contact Us' },

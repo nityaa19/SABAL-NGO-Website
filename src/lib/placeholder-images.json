@@ -65,6 +65,24 @@
       "description": "Community health camp.",
       "imageUrl": "/gallery/gall7.jpg",
       "imageHint": "health camp"
+    },
+    {
+      "id": "blog-post-1",
+      "description": "Volunteers distributing food to the needy.",
+      "imageUrl": "https://images.unsplash.com/photo-1662923447979-0c89ef9f2fa8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxmb29kJTIwZGlzdHJpYnV0aW9ufGVufDB8fHx8MTc1OTYyNjkyMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "food distribution"
+    },
+    {
+      "id": "blog-post-2",
+      "description": "Children smiling in an outdoor classroom setting.",
+      "imageUrl": "https://images.unsplash.com/photo-1605627079912-97c3810a11a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjaGlsZHJlbiUyMGVkdWNhdGlvbnxlbnwwfHx8fDE3NTk2NDk0MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "children education"
+    },
+    {
+      "id": "blog-post-3",
+      "description": "A successful community health check-up event.",
+      "imageUrl": "https://images.unsplash.com/photo-1605425368891-5533a8ede6c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aGVhbHRoJTIwY2FtcHxlbnwwfHx8fDE3NTk2ODI2MTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "health camp"
     }
   ]
 }
