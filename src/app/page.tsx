@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/button';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HandHeart, Users, ShieldCheck } from 'lucide-react';
@@ -7,8 +6,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 
 export default function Home() {
-  const heroImage = PlaceHolderImages.find((img) => img.id === 'blood-donation-hero');
-
   const features = [
     {
       icon: <HandHeart className="h-12 w-12 text-primary" />,
@@ -30,16 +27,14 @@ export default function Home() {
   return (
     <div className="flex flex-col">
        <section className="relative h-[80vh] w-full">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
+        <Image
+            src="/landing/herodesk.jpg"
+            alt="SABAL volunteers working in the community"
             fill
             className="object-cover"
             priority
-            data-ai-hint={heroImage.imageHint}
+            data-ai-hint="community volunteers"
           />
-        )}
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center space-y-4 px-4 text-center text-white">
            <h1 className="text-2xl md:text-3xl font-light font-headline tracking-tight">
