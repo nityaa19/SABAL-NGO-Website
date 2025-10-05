@@ -41,7 +41,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur-sm">
+    <nav className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="container mx-auto flex h-16 items-center justify-center px-4">
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
@@ -86,7 +86,7 @@ export default function Navbar() {
                 </div>
                 <div className="mt-auto p-4 border-t">
                     <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground transition-transform duration-300 hover:scale-105">
-                        <Link href="/donate-blood" onClick={() => setMobileMenuOpen(false)}>Donate Now</Link>
+                        <Link href="/donate" onClick={() => setMobileMenuOpen(false)}>Donate Now</Link>
                     </Button>
                 </div>
               </div>
