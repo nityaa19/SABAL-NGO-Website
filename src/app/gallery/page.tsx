@@ -1,7 +1,9 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Construction } from 'lucide-react';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+import Image from 'next/image';
 
 export default function GalleryPage() {
+  const galleryImages = PlaceHolderImages.filter(img => img.id.startsWith('gallery-'));
+
   return (
     <div className="bg-background">
       <div className="container mx-auto px-4 py-16 md:py-24">
@@ -12,18 +14,25 @@ export default function GalleryPage() {
           </p>
         </div>
 
-        <div className="mt-16 flex justify-center">
-          <Card className="w-full max-w-2xl shadow-lg bg-card border-none">
-            <CardHeader className="items-center text-center">
-              <Construction className="h-16 w-16 text-primary" />
-              <CardTitle className="text-2xl font-headline pt-4">Page Under Construction</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <p className="text-muted-foreground">
-                Our team is working hard to bring you our photo gallery. Please check back soon!
-              </p>
-            </CardContent>
-          </Card>
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {galleryImages.map((image, index) => (
+            <div key={image.id} className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+              <Image
+                src={image.imageUrl}
+                alt={image.description}
+                width={600}
+                height={400}
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                data-ai-hint={image.imageHint}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 p-6">
+                <h3 className="text-xl font-bold text-white transition-all duration-300 group-hover:text-primary">
+                  {image.description}
+                </h3>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
