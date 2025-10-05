@@ -11,6 +11,12 @@ const navLinks = [
   { href: '/contact', label: 'Contact Us' },
 ];
 
+const legalLinks = [
+    { href: '/terms-and-conditions', label: 'Terms & Condition' },
+    { href: '/privacy-policy', label: 'Privacy Policy' },
+    { href: '/refund-and-cancellation-policy', label: 'Refund & Cancellation Policy' },
+];
+
 const socialLinks = [
   { icon: <Facebook className="h-5 w-5" />, href: 'https://www.facebook.com/sabal.sasaram', label: 'Facebook' },
   { icon: <Twitter className="h-5 w-5" />, href: '#', label: 'Twitter' },
@@ -28,11 +34,32 @@ export default function Footer() {
             <p className="mt-4 text-sm text-muted-foreground">
               Connecting Hearts, Building Communities.
             </p>
+             <div className="flex mt-4 space-x-2">
+              {socialLinks.map(({ href, icon, label }) => (
+                <Button key={label} variant="ghost" size="icon" asChild className="text-muted-foreground hover:text-primary hover:bg-primary/10 transition-transform duration-300 hover:scale-110">
+                  <a href={href} aria-label={label} target='_blank' rel='noopener noreferrer'>
+                    {icon}
+                  </a>
+                </Button>
+              ))}
+            </div>
           </div>
           <div>
             <h3 className="font-semibold font-headline tracking-wider text-foreground">Quick Links</h3>
             <ul className="mt-4 space-y-2">
               {navLinks.map(({ href, label }) => (
+                <li key={href}>
+                  <Link href={href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+           <div>
+            <h3 className="font-semibold font-headline tracking-wider text-foreground">Legal</h3>
+            <ul className="mt-4 space-y-2">
+              {legalLinks.map(({ href, label }) => (
                 <li key={href}>
                   <Link href={href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {label}
@@ -57,18 +84,6 @@ export default function Footer() {
                 <a href="mailto:sabalngo21@gmail.com" className="hover:text-primary transition-colors">sabalngo21@gmail.com</a>
               </li>
             </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold font-headline tracking-wider text-foreground">Follow Us</h3>
-            <div className="flex mt-4 space-x-2">
-              {socialLinks.map(({ href, icon, label }) => (
-                <Button key={label} variant="ghost" size="icon" asChild className="text-muted-foreground hover:text-primary hover:bg-primary/10 transition-transform duration-300 hover:scale-110">
-                  <a href={href} aria-label={label} target='_blank' rel='noopener noreferrer'>
-                    {icon}
-                  </a>
-                </Button>
-              ))}
-            </div>
           </div>
         </div>
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
