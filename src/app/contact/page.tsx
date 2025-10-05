@@ -33,51 +33,63 @@ export default function ContactPage() {
           </div>
 
           <div className="space-y-12">
-            <div>
-              <h3 className="text-2xl font-bold font-headline mb-4 flex items-center gap-3">
-                <MapPin className="h-7 w-7 text-primary" />
-                Visit Us
-              </h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Govind Nagar, Ward no. 3, Near Galaxy Convent School, Takiya, Sasaram, Rohtas,(Bihar) 821113
-              </p>
+            <div className="flex items-start gap-4">
+               <div className="flex-shrink-0 pt-1">
+                 <MapPin className="h-7 w-7 text-primary" />
+               </div>
+               <div>
+                  <h3 className="text-2xl font-bold font-headline mb-2">
+                    Visit Us
+                  </h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    Govind Nagar, Ward no. 3, Near Galaxy Convent School, Takiya, Sasaram, Rohtas,(Bihar) 821113
+                  </p>
+               </div>
             </div>
-             <div>
-              <h3 className="text-2xl font-bold font-headline mb-4 flex items-center gap-3">
-                <Phone className="h-7 w-7 text-primary" />
-                Call Us
-              </h3>
-              <div className="space-y-3">
-                {officeContacts.map((contact, index) => (
-                  <div key={index} className="flex items-center gap-4 group">
-                    <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
-                      {contact.icon}
-                    </div>
-                    <a href={`tel:${contact.value}`} className="text-lg text-muted-foreground group-hover:text-primary transition-colors">
-                      <span className="font-semibold">{contact.label}:</span> {contact.value}
-                    </a>
+             <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 pt-1">
+                    <Phone className="h-7 w-7 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold font-headline mb-4">
+                    Call Us
+                  </h3>
+                  <div className="space-y-3">
+                    {officeContacts.map((contact, index) => (
+                      <div key={index} className="flex items-center gap-4 group">
+                        <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
+                          {contact.icon}
+                        </div>
+                        <a href={`tel:${contact.value}`} className="text-lg text-muted-foreground group-hover:text-primary transition-colors">
+                          <span className="font-semibold">{contact.label}:</span> {contact.value}
+                        </a>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </div>
-             <div>
-              <h3 className="text-2xl font-bold font-headline mb-4 flex items-center gap-3">
-                <Mail className="h-7 w-7 text-primary" />
-                Email Us
-              </h3>
-              <div className="space-y-3">
-                {emailContacts.map((contact, index) => (
-                  <div key={index} className="flex items-center gap-4 group">
-                     <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
-                      {contact.icon}
-                    </div>
-                    <a href={`mailto:${contact.value}`} className="text-lg text-muted-foreground group-hover:text-primary transition-colors">
-                      {contact.value}
-                    </a>
+                </div>
+             </div>
+             <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 pt-1">
+                    <Mail className="h-7 w-7 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold font-headline mb-4">
+                    Email Us
+                  </h3>
+                  <div className="space-y-3">
+                    {emailContacts.map((contact, index) => (
+                      <div key={index} className="flex items-center gap-4 group">
+                         <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
+                          {contact.icon}
+                        </div>
+                        <a href={`mailto:${contact.value}`} className="text-lg text-muted-foreground group-hover:text-primary transition-colors">
+                          {contact.value}
+                        </a>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </div>
+                </div>
+             </div>
           </div>
         </div>
         
