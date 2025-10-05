@@ -87,7 +87,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-secondary/60">
         <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 items-center gap-12">
-                 <div className="aspect-video">
+                 <div className="aspect-w-16 aspect-h-9">
                     <iframe
                     className="w-full h-full rounded-lg shadow-xl"
                     src="https://www.youtube-nocookie.com/embed/xyzsstAl2FA?si=0jKN44phQ-ztZjsu"
