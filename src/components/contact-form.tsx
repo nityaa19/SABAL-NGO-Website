@@ -1,89 +1,85 @@
 'use client';
 
-import { useActionState, useEffect, useRef } from 'react';
-import { useFormStatus } from 'react-dom';
+import { useState, useRef, FormEvent } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { submitContactForm, type FormState } from '@/app/contact/actions';
 import { Alert, AlertDescription, AlertTitle } from './ui/alert';
 import { Terminal } from 'lucide-react';
 
-function SubmitButton() {
-  const { pending } = useFormStatus();
-
-  return (
-    <Button type="submit" disabled={pending} className="w-full">
-      {pending ? 'Sending...' : 'Send Message'}
-    </Button>
-  );
-}
-
 export default function ContactForm() {
-  const initialState: FormState = { message: '', errors: {}, success: false };
-  const [state, formAction] = useActionState(submitContactForm, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [success, setSuccess] = useState(false);
 
-  useEffect(() => {
-    if (state.success) {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(event.currentTarget);
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const subject = formData.get('subject') as string;
+    const message = formData.get('message') as string;
+
+    if (!name || !email || !subject || !message) {
       toast({
-        title: 'Message Sent!',
-        description: state.message,
-      });
-      formRef.current?.reset();
-    } else if (state.message && state.errors) {
-       toast({
         variant: "destructive",
         title: 'Error',
-        description: state.message,
+        description: 'Please fill out all fields.',
       });
+      setIsSubmitting(false);
+      return;
     }
-  }, [state, toast]);
+
+    const mailtoLink = `mailto:nityanand1900@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    
+    window.location.href = mailtoLink;
+
+    toast({
+      title: 'Email Client Opened',
+      description: 'Please send the email from your mail client.',
+    });
+
+    setSuccess(true);
+    formRef.current?.reset();
+    setIsSubmitting(false);
+  };
 
   return (
-    <form ref={formRef} action={formAction} className="space-y-6">
+    <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
       <div>
         <Label htmlFor="name">Name</Label>
         <Input id="name" name="name" type="text" placeholder="Your Name" required />
-        {state.errors?.name && (
-          <p className="text-sm text-destructive mt-1">{state.errors.name[0]}</p>
-        )}
       </div>
       <div>
         <Label htmlFor="email">Email</Label>
         <Input id="email" name="email" type="email" placeholder="your.email@example.com" required />
-        {state.errors?.email && (
-          <p className="text-sm text-destructive mt-1">{state.errors.email[0]}</p>
-        )}
       </div>
       <div>
         <Label htmlFor="subject">Subject</Label>
         <Input id="subject" name="subject" type="text" placeholder="How can we help?" required />
-        {state.errors?.subject && (
-          <p className="text-sm text-destructive mt-1">{state.errors.subject[0]}</p>
-        )}
       </div>
       <div>
         <Label htmlFor="message">Message</Label>
         <Textarea id="message" name="message" placeholder="Your message here..." rows={5} required />
-        {state.errors?.message && (
-          <p className="text-sm text-destructive mt-1">{state.errors.message[0]}</p>
-        )}
       </div>
       
-      {state.success && (
+      {success && (
         <Alert>
           <Terminal className="h-4 w-4" />
           <AlertTitle>Success!</AlertTitle>
-          <AlertDescription>{state.message}</AlertDescription>
+          <AlertDescription>Your email client has been opened to send the message.</AlertDescription>
         </Alert>
       )}
       
-      <SubmitButton />
+      <Button type="submit" disabled={isSubmitting} className="w-full">
+        {isSubmitting ? 'Processing...' : 'Send Message'}
+      </Button>
     </form>
   );
 }
