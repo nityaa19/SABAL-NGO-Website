@@ -8,7 +8,6 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
-import { Separator } from './ui/separator';
 import Logo from './logo';
 
 const navLinks = [
@@ -47,19 +46,15 @@ export default function Header() {
         <Logo />
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex flex-1 items-center justify-center gap-8">
-          {navLinks.map((link, index) => (
-            <React.Fragment key={link.href}>
-              <NavLink href={link.href} label={link.label} />
-              {index < navLinks.length - 1 && <Separator orientation="vertical" className="h-4" />}
-            </React.Fragment>
+        <nav className="hidden md:flex items-center gap-6">
+          {navLinks.map((link) => (
+            <NavLink key={link.href} href={link.href} label={link.label} />
           ))}
-        </nav>
-        <div className="hidden md:block">
            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground transition-transform duration-300 hover:scale-105">
                 <Link href="/donate">Donate</Link>
             </Button>
-        </div>
+        </nav>
+        
 
         {/* Mobile Navigation */}
         <div className="md:hidden">
