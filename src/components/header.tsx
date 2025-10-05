@@ -45,7 +45,7 @@ export default function Header() {
         <Logo />
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <NavLink key={link.href} href={link.href} label={link.label} />
           ))}
@@ -75,7 +75,7 @@ export default function Header() {
                     </Button>
                   </SheetTrigger>
                 </div>
-                <div className="mt-6 flex flex-col gap-2 px-4">
+                <div className="mt-6 flex flex-col gap-4 px-4">
                   {navLinks.map(({ href, label }) => (
                      <NavLink 
                         key={href}
