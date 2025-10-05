@@ -4,7 +4,6 @@ import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import Navbar from '@/components/navbar';
 import { Poppins } from 'next/font/google';
 
 export const metadata: Metadata = {
@@ -28,7 +27,6 @@ export default function RootLayout({
       <body className={cn('font-body antialiased bg-background text-foreground', poppins.variable)}>
         <div className="relative flex min-h-dvh flex-col">
           <Header />
-          <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
