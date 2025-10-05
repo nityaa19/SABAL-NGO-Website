@@ -26,57 +26,45 @@
     },
     {
       "id": "gallery-1",
-      "description": "Volunteers distributing food to the needy.",
-      "imageUrl": "https://images.unsplash.com/photo-1710264144788-c2301607d735?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmb29kJTIwZGlzdHJpYnV0aW9ufGVufDB8fHx8MTc1OTYyNjkyMnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "food distribution"
+      "description": "SABAL community event.",
+      "imageUrl": "/gallery/gall1.jpg",
+      "imageHint": "community event"
     },
     {
       "id": "gallery-2",
-      "description": "Children smiling during a community event.",
-      "imageUrl": "https://images.unsplash.com/photo-1586351934193-6b655403ca71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxoYXBweSUyMGNoaWxkcmVufGVufDB8fHx8MTc1OTY0ODIzNHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "happy children"
+      "description": "SABAL volunteer work.",
+      "imageUrl": "/gallery/gall2.jpg",
+      "imageHint": "volunteer work"
     },
     {
       "id": "gallery-3",
-      "description": "A successful blood donation camp.",
-      "imageUrl": "https://images.unsplash.com/photo-1590501753494-9b229a1dd663?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkb25hdGlvbiUyMGNhbXB8ZW58MHx8fHwxNzU5NjgyNjE3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "donation camp"
+      "description": "Donation drive.",
+      "imageUrl": "/gallery/gall3.jpg",
+      "imageHint": "donation drive"
     },
     {
       "id": "gallery-4",
-      "description": "Planting trees for a greener environment.",
-      "imageUrl": "https://images.unsplash.com/photo-1576182293996-48feaf268a3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0cmVlJTIwcGxhbnRhdGlvbnxlbnwwfHx8fDE3NTk2ODI2MTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Tree plantation activity.",
+      "imageUrl": "/gallery/gall4.jpg",
       "imageHint": "tree plantation"
     },
     {
       "id": "gallery-5",
-      "description": "An educational workshop for underprivileged students.",
-      "imageUrl": "https://images.unsplash.com/photo-1752649935124-f5a7ac531a97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZWR1Y2F0aW9uJTIwd29ya3Nob3B8ZW58MHx8fHwxNzU5NjgyNjE3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Educational workshop.",
+      "imageUrl": "/gallery/gall5.jpg",
       "imageHint": "education workshop"
     },
     {
       "id": "gallery-6",
-      "description": "SABAL team members in a group photo.",
-      "imageUrl": "https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0ZWFtJTIwcGhvdG98ZW58MHx8fHwxNzU5NjgyNjE3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "SABAL team photo.",
+      "imageUrl": "/gallery/gall6.jpg",
       "imageHint": "team photo"
     },
     {
       "id": "gallery-7",
-      "description": "Distributing blankets during winter.",
-      "imageUrl": "https://images.unsplash.com/photo-1609700930660-8573f28f8e2f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3aW50ZXIlMjBkcml2ZXxlbnwwfHx8fDE3NTk2ODI2MTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "winter drive"
-    },
-    {
-      "id": "gallery-8",
-      "description": "A community health check-up camp in progress.",
-      "imageUrl": "https://images.unsplash.com/photo-1708195994250-bd77af111141?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxoZWFsdGglMjBjYW1wfGVufDB8fHx8MTc1OTY4MjYxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Community health camp.",
+      "imageUrl": "/gallery/gall7.jpg",
       "imageHint": "health camp"
-    },
-    {
-      "id": "gallery-9",
-      "description": "Celebrating a festival with the community.",
-      "imageUrl": "https://images.unsplash.com/photo-1630439924732-4f3f33e17190?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb21tdW5pdHklMjBjZWxlYnJhdGlvbnxlbnwwfHx8fDE3NTk2ODI2MTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "community celebration"
     }
   ]
 }
