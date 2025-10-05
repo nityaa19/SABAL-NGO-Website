@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { BadgeCheck, Building, Eye, Goal, Target } from 'lucide-react';
+import { BadgeCheck, Building, Goal, Target, Eye } from 'lucide-react';
 import Image from 'next/image';
 
 const highlightedKeywords = [
@@ -23,21 +23,25 @@ const highlightText = (text: string) => {
 
 export default function AboutPage() {
     const aboutImage = PlaceHolderImages.find(img => img.id === 'vision-image');
+    
     const sections = [
         {
             icon: <Target className="h-10 w-10 text-primary" />,
             title: "Objective",
-            description: "SABAL – Social Activities Bring Ability & Liberty is a social developmental organization. It’s  a  #non-government,  #non-profitable organization working for social development of vulnerable and less developed people. It was established by a group of young and energetic people who were highly motivated and committed for  contributing their time, skills and energies for the development and empowerment of social disadvantages  and vulnerable communities in our society and addressing all the social causes which bars them from their #development"
+            description: "SABAL – Social Activities Bring Ability & Liberty is a social developmental organization. It’s a non-government, non-profitable organization working for social development of vulnerable and less developed people. It was established by a group of young and energetic people who were highly motivated and committed for contributing their time, skills and energies for the development and empowerment of social disadvantages and vulnerable communities in our society and addressing all the social causes which bars them from their development",
+            image: PlaceHolderImages.find(img => img.id === 'objective-image')
         },
         {
             icon: <Goal className="h-10 w-10 text-primary" />,
             title: "Mission",
-            description: "SABAL’s mission is to work for the development and empowerment of #socio-economically disadvantaged and vulnerable people in our society and help them according their poverty – linked issues"
+            description: "SABAL’s mission is to work for the development and empowerment of socio-economically disadvantaged and vulnerable people in our society and help them according their poverty – linked issues",
+            image: PlaceHolderImages.find(img => img.id === 'mission-image')
         },
         {
             icon: <Eye className="h-10 w-10 text-primary" />,
             title: "Vision",
-            description: "To inspire and equip masses to reach their divine potential. We believe that only #unity can change the destiny of nation, it kills #poverty, #hunger, #injustice and #discrimination of all sorts and all human beings can enjoy their basic rights. SABAL envisions a poverty free empowered nation and bring equality and accountability in our society."
+            description: "To inspire and equip masses to reach their divine potential. We believe that only unity can change the destiny of nation, it kills poverty, hunger, injustice and discrimination of all sorts and all human beings can enjoy their basic rights. SABAL envisions a poverty free empowered nation and bring equality and accountability in our society.",
+            image: PlaceHolderImages.find(img => img.id === 'vision-image')
         }
     ];
 
@@ -82,17 +86,31 @@ export default function AboutPage() {
       </section>
 
       <section className="container mx-auto px-4 py-16 md:py-24">
-        <div className="grid gap-12 md:grid-cols-1">
-          {sections.map((section) => (
-            <Card key={section.title} className="transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
-              <CardHeader className="items-center text-center">
-                <div className="rounded-full bg-primary/10 p-4">{section.icon}</div>
-                <CardTitle className="pt-4 text-3xl font-headline">{section.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center text-lg text-muted-foreground">
-                <p>{highlightText(section.description)}</p>
-              </CardContent>
-            </Card>
+        <div className="space-y-20">
+          {sections.map((section, index) => (
+            <div key={section.title} className={`grid md:grid-cols-2 gap-12 items-center ${index % 2 !== 0 ? 'md:grid-flow-col-dense' : ''}`}>
+               <div className={`overflow-hidden rounded-lg shadow-xl group ${index % 2 !== 0 ? 'md:order-2' : ''}`}>
+                {section.image && (
+                    <Image
+                        src={section.image.imageUrl}
+                        alt={section.title}
+                        width={600}
+                        height={400}
+                        className="w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                        data-ai-hint={section.image.imageHint}
+                    />
+                )}
+               </div>
+              <div className="flex flex-col justify-center">
+                 <div className="flex items-center gap-4 mb-4">
+                    <div className="p-3 bg-primary/10 rounded-full">{section.icon}</div>
+                    <h2 className="text-3xl font-bold md:text-4xl font-headline">{section.title}</h2>
+                 </div>
+                <p className="text-lg text-muted-foreground text-justify">
+                    {highlightText(section.description)}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </section>
