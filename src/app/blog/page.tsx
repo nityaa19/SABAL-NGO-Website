@@ -9,27 +9,30 @@ export default function BlogPage() {
   const blogPosts = [
     {
       id: 1,
-      title: 'Our Latest Food Drive: A Resounding Success',
+      title: 'A Visit to Sasaram Jail with Sabal NGO',
       excerpt: 'We are thrilled to share the incredible results of our recent community food drive. Thanks to your generous contributions...',
       author: 'SABAL Team',
       date: 'June 4, 2024',
       image: PlaceHolderImages.find(img => img.id === 'blog-post-1'),
+      link: 'http://nitya-ssm.blogspot.com/2025/06/a-visit-to-sasaram-jail-with-sabal-ngo.html'
     },
     {
       id: 2,
-      title: 'Empowering the Next Generation Through Education',
+      title: 'My First Day at Sabal NGO',
       excerpt: 'Education is the cornerstone of a brighter future. Our latest initiative focuses on providing essential learning materials and support...',
       author: 'SABAL Team',
       date: 'May 28, 2024',
       image: PlaceHolderImages.find(img => img.id === 'blog-post-2'),
+      link: 'http://nitya-ssm.blogspot.com/2025/07/my-first-day-at-sabal-ngo.html'
     },
     {
       id: 3,
-      title: 'Highlights from Our Annual Health Camp',
+      title: 'A Day of Purpose and Positivity',
       excerpt: 'This year\'s health camp was our biggest yet, providing free check-ups and medical advice to hundreds of community members...',
       author: 'SABAL Team',
       date: 'May 15, 2024',
       image: PlaceHolderImages.find(img => img.id === 'blog-post-3'),
+      link: 'http://nitya-ssm.blogspot.com/2025/06/a-day-of-purpose-and-positivity.html'
     },
   ];
 
@@ -62,7 +65,7 @@ export default function BlogPage() {
               <CardContent className="flex flex-col flex-1 p-6">
                 <div className="flex-1">
                   <h2 className="text-xl font-bold font-headline mb-3">
-                    <Link href="#" className="hover:text-primary transition-colors">
+                    <Link href={post.link} target='_blank' rel='noopener noreferrer' className="hover:text-primary transition-colors">
                       {post.title}
                     </Link>
                   </h2>
@@ -82,7 +85,7 @@ export default function BlogPage() {
                         </div>
                     </div>
                   <Button asChild variant="outline" className="group">
-                    <Link href="#">
+                    <Link href={post.link} target='_blank' rel='noopener noreferrer'>
                       Read More <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </Link>
                   </Button>
