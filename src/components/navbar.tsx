@@ -12,7 +12,7 @@ import { Separator } from './ui/separator';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/#about', label: 'About Us' },
+  { href: '/about', label: 'About Us' },
   { href: '/donate-blood', label: 'Donate Blood' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/blogs', label: 'Blogs' },
@@ -41,7 +41,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="sticky top-0 z-40 w-full border-b bg-background">
+    <nav className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur-sm">
       <div className="container mx-auto flex h-16 items-center justify-center px-4">
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">

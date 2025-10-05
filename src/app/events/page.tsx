@@ -13,7 +13,7 @@ export default function EventsPage() {
         </div>
 
         <div className="mt-16 flex justify-center">
-          <Card className="w-full max-w-2xl shadow-lg bg-card border-none">
+          <Card className="w-full max-w-2xl transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
             <CardHeader className="items-center text-center">
               <Construction className="h-16 w-16 text-primary" />
               <CardTitle className="text-2xl font-headline pt-4">Page Under Construction</CardTitle>

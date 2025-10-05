@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/#about', label: 'About Us' },
+  { href: '/about', label: 'About Us' },
   { href: '/donate-blood', label: 'Donate Blood' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/blogs', label: 'Blogs' },
