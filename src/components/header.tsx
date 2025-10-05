@@ -15,7 +15,6 @@ const navLinks = [
   { href: '/about', label: 'About Us' },
   { href: '/donate-blood', label: 'Donate Blood' },
   { href: '/gallery', label: 'Gallery' },
-  { href: '/blogs', label: 'Blogs' },
   { href: '/contact', label: 'Contact Us' },
 ];
 
@@ -41,7 +40,7 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-background">
+    <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur-sm">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <Logo />
 
@@ -68,7 +67,7 @@ export default function Header() {
             <SheetContent side="right" className="w-full sm:max-w-xs p-0">
               <div className="flex h-full flex-col">
                 <div className="flex items-center justify-between border-b p-4">
-                   <h3 className='font-bold text-lg'>Menu</h3>
+                   <h3 className='font-bold text-lg font-headline'>Menu</h3>
                   <SheetTrigger asChild>
                     <Button variant="ghost" size="icon">
                       <X className="h-6 w-6" />

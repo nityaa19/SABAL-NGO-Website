@@ -8,7 +8,6 @@ const navLinks = [
   { href: '/about', label: 'About Us' },
   { href: '/donate-blood', label: 'Donate Blood' },
   { href: '/gallery', label: 'Gallery' },
-  { href: '/blogs', label: 'Blogs' },
   { href: '/contact', label: 'Contact Us' },
 ];
 

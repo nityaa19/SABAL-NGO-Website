@@ -107,7 +107,7 @@ export default function AboutPage() {
                     <Card key={detail.title} className="text-center transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                         <CardHeader className="items-center">
                            {detail.icon}
-                            <CardTitle className='pt-2'>{detail.title}</CardTitle>
+                            <CardTitle className='pt-2 font-headline'>{detail.title}</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <p className="text-muted-foreground">{detail.description}</p>

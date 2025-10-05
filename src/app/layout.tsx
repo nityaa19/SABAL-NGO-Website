@@ -4,17 +4,24 @@ import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import { Poppins } from 'next/font/google';
+import { Poppins, Lora } from 'next/font/google';
 
 export const metadata: Metadata = {
-  title: 'SABAL - एक सामाजिक संस्था',
+  title: 'SABAL',
   description: 'Connecting Hearts, Building Communities.',
 };
 
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-poppins',
+});
+
+const lora = Lora({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-lora',
 });
 
 export default function RootLayout({
@@ -24,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={cn('font-body antialiased bg-background text-foreground', poppins.variable)}>
+      <body className={cn('font-body antialiased bg-background text-foreground', poppins.variable, lora.variable)}>
         <div className="relative flex min-h-dvh flex-col">
           <Header />
           <main className="flex-1">{children}</main>

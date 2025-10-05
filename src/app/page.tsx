@@ -73,7 +73,7 @@ export default function Home() {
               <Card key={index} className="text-center transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
                 <CardHeader className="items-center">
                   <div className="bg-primary/10 p-4 rounded-full">{feature.icon}</div>
-                  <CardTitle className="pt-4">{feature.title}</CardTitle>
+                  <CardTitle className="pt-4 font-headline">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">{feature.description}</p>
