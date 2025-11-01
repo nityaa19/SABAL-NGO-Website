@@ -19,6 +19,7 @@ export default function ContactForm() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSubmitting(true);
+    setSuccess(false);
 
     const formData = new FormData(event.currentTarget);
     const name = formData.get('name') as string;
@@ -36,15 +37,17 @@ export default function ContactForm() {
       return;
     }
 
+    // Using a mailto link to open the user's default email client.
     const mailtoLink = `mailto:nityanand1900@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
     
+    // This is a client-side action. It does not require a server.
     window.location.href = mailtoLink;
 
     toast({
       title: 'Email Client Opened',
       description: 'Please send the email from your mail client.',
     });
-
+    
     setSuccess(true);
     formRef.current?.reset();
     setIsSubmitting(false);
