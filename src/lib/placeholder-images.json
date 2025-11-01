@@ -9,20 +9,20 @@
     {
       "id": "objective-image",
       "description": "A group of volunteers working together on a community project.",
-      "imageUrl": "/about/objective.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1652811742697-c14964f4ea11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb21tdW5pdHklMjBwcm9qZWN0fGVufDB8fHx8MTc1OTY3OTAwN3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "community project"
     },
     {
       "id": "mission-image",
       "description": "A diverse group of people with their hands together in a circle.",
-      "imageUrl": "/about/mission.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1655720359248-eeace8c709c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml0eSUyMGhhbmRzfGVufDB8fHx8MTc1OTY3OTAxNnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "unity hands"
     },
     {
       "id": "vision-image",
       "description": "A person looking out at a hopeful sunrise over a city.",
-      "imageUrl": "/about/vision.jpg",
-      "imageHint": "unity hands"
+      "imageUrl": "https://images.unsplash.com/photo-1742338319026-4c97f99f0d87?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxob3BlZnVsJTIwc3VucmlzZXxlbnwwfHx8fDE3NTk2NzkwMjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hopeful sunrise"
     },
     {
       "id": "gallery-1",
