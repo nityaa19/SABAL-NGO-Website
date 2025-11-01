@@ -4,6 +4,8 @@ import { z } from 'zod';
 import { differenceInYears } from 'date-fns';
 import { initializeFirebase } from '@/firebase';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { FirestorePermissionError } from '@/firebase/errors';
+import { errorEmitter } from '@/firebase/error-emitter';
 
 export type BloodDonationFormState = {
   message: string;
@@ -60,33 +62,38 @@ export async function submitBloodDonationForm(
     };
   }
 
+  const { firestore } = initializeFirebase();
+  const donationsCollection = collection(firestore, 'bloodDonations');
+  const data = {
+    ...validatedFields.data,
+    submittedAt: serverTimestamp(),
+  };
+
   try {
-    const { firestore } = initializeFirebase();
-    const donationsCollection = collection(firestore, 'bloodDonations');
-    
-    // Ensure we wait for the operation to complete
-    await addDoc(donationsCollection, {
-      ...validatedFields.data,
-      submittedAt: serverTimestamp(),
-    });
-    
+    await addDoc(donationsCollection, data);
     return {
       message: 'Thank you for registering to donate blood! Your registration has been saved.',
       success: true,
     };
+  } catch (serverError: any) {
+    // Check if it's a permissions error and create a contextual error
+    if (serverError.code === 'permission-denied') {
+      const permissionError = new FirestorePermissionError({
+        path: donationsCollection.path,
+        operation: 'create',
+        requestResourceData: data,
+      });
 
-  } catch (error) {
-    console.error('Error saving to Firestore:', error);
-    // Provide a more specific error message if possible
-    let errorMessage = 'An unexpected error occurred. Please try again later.';
-    if (error instanceof Error && 'code' in error) {
-      if ((error as {code: string}).code === 'permission-denied') {
-        errorMessage = 'There was a problem with saving your data due to security rules. Please contact support.';
-      }
+      // This will throw the error to be displayed by the Next.js error overlay
+      // during development, giving us rich context.
+      throw permissionError;
     }
+    
+    // Fallback for other errors
+    console.error('Error saving to Firestore:', serverError);
     return {
-      message: errorMessage,
+      message: 'An unexpected error occurred. Please try again later.',
       success: false,
-    }
+    };
   }
 }
