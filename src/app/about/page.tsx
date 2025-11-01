@@ -58,7 +58,7 @@ export default function AboutPage() {
 
   return (
     <div className="bg-background">
-      <section className="relative h-[50vh] w-full">
+      <section className="relative h-[60vh] w-full">
         {aboutImage && (
             <Image
                 src={aboutImage.imageUrl}
