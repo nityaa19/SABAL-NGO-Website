@@ -1,8 +1,10 @@
-'use server';
+'use client';
 
 import { z } from 'zod';
-import { getFirestore, addDoc, collection, serverTimestamp } from 'firebase/firestore/lite';
-import { initializeFirebase } from '@/firebase/admin';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { initializeFirebase } from '@/firebase';
+import { FirestorePermissionError } from '@/firebase/errors';
+import { errorEmitter } from '@/firebase/error-emitter';
 
 export const contactFormSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
@@ -13,27 +15,25 @@ export const contactFormSchema = z.object({
 
 export type ContactFormData = z.infer<typeof contactFormSchema>;
 
-export async function submitContactForm(formData: ContactFormData) {
-  // Validate the data on the server
-  const validatedFields = contactFormSchema.safeParse(formData);
-
-  if (!validatedFields.success) {
-    throw new Error('Invalid form data provided.');
-  }
-
-  // Initialize Firebase Admin SDK
+export function submitContactForm(formData: ContactFormData) {
   const { firestore } = initializeFirebase();
   const submissionsCollection = collection(firestore, 'contactFormSubmissions');
 
   const dataToSave = {
-    ...validatedFields.data,
+    ...formData,
     submissionDate: serverTimestamp(),
   };
 
-  try {
-    await addDoc(submissionsCollection, dataToSave);
-  } catch (error) {
-    console.error('Error writing contact form submission to Firestore:', error);
-    throw new Error('Could not submit form. Please try again later.');
-  }
+  addDoc(submissionsCollection, dataToSave)
+    .catch((serverError) => {
+      console.error("Firestore write error:", serverError);
+      const permissionError = new FirestorePermissionError({
+        path: submissionsCollection.path,
+        operation: 'create',
+        requestResourceData: dataToSave,
+      });
+      errorEmitter.emit('permission-error', permissionError);
+      // This will be caught by the calling component's try/catch
+      throw new Error('Failed to save contact form submission due to a server error.');
+    });
 }

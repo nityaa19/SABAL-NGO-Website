@@ -48,7 +48,7 @@ export default function ContactForm() {
     }
 
     try {
-      await submitContactForm(validatedFields.data);
+      submitContactForm(validatedFields.data);
       setSuccess(true);
       toast({
         title: 'Message Sent!',
