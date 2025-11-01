@@ -81,20 +81,20 @@ export default function AboutPage() {
       <section className="container mx-auto px-4 py-20 md:py-28">
         <div className="space-y-24">
           {sections.map((section, index) => (
-            <div key={section.title} className={`grid md:grid-cols-2 gap-16 items-center`}>
-               <div className={`overflow-hidden rounded-lg shadow-xl group ${index % 2 !== 0 ? 'md:order-2' : ''}`}>
+            <div key={section.title} className={`grid md:grid-cols-5 gap-16 items-center`}>
+               <div className={`overflow-hidden rounded-lg shadow-xl group ${index % 2 !== 0 ? 'md:order-2' : ''} md:col-span-2`}>
                 {section.image && (
                     <Image
                         src={section.image.imageUrl}
                         alt={section.title}
                         width={600}
                         height={400}
-                        className="w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                        className="w-full h-auto object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
                         data-ai-hint={section.image.imageHint}
                     />
                 )}
                </div>
-              <div className="flex flex-col justify-center">
+              <div className="flex flex-col justify-center md:col-span-3">
                  <div className="flex items-center gap-4 mb-6">
                     <div className="p-3 bg-primary/10 rounded-full">{section.icon}</div>
                     <h2 className="text-3xl font-bold md:text-4xl font-headline">{section.title}</h2>
