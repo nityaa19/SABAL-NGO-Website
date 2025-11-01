@@ -27,34 +27,28 @@ export const bloodDonationSchema = z.object({
 
 export type BloodDonationFormData = z.infer<typeof bloodDonationSchema>;
 
-export async function saveBloodDonation(formData: BloodDonationFormData) {
-  try {
-    const { firestore } = initializeFirebase();
-    const donationsCollection = collection(firestore, 'bloodDonations');
-    
-    const data = {
-      ...formData,
-      submittedAt: serverTimestamp(),
-    };
+export function saveBloodDonation(formData: BloodDonationFormData) {
+  const { firestore } = initializeFirebase();
+  const donationsCollection = collection(firestore, 'bloodDonations');
+  
+  const data = {
+    ...formData,
+    submittedAt: serverTimestamp(),
+  };
 
-    // Not awaiting this is intentional to allow for optimistic UI updates
-    addDoc(donationsCollection, data)
-      .catch((serverError) => {
-        console.error("Firestore write error:", serverError);
-        // Create and emit a more specific error for debugging
-        const permissionError = new FirestorePermissionError({
-          path: donationsCollection.path,
-          operation: 'create',
-          requestResourceData: data,
-        });
-        errorEmitter.emit('permission-error', permissionError);
-        // Re-throw a generic error to be caught by the caller
-        throw new Error('Failed to save donation due to a server error.');
+  // Not awaiting this is intentional to allow for optimistic UI updates
+  // The .catch block will handle errors, and the calling component should have its own error handling.
+  addDoc(donationsCollection, data)
+    .catch((serverError) => {
+      console.error("Firestore write error:", serverError);
+      // Create and emit a more specific error for debugging
+      const permissionError = new FirestorePermissionError({
+        path: donationsCollection.path,
+        operation: 'create',
+        requestResourceData: data,
       });
-
-  } catch (error) {
-    console.error('Error in saveBloodDonation:', error);
-    // Re-throw the error to be handled by the calling component
-    throw error;
-  }
+      errorEmitter.emit('permission-error', permissionError);
+      // Re-throw a generic error to be caught by the caller's try/catch
+      throw new Error('Failed to save donation due to a server error.');
+    });
 }
