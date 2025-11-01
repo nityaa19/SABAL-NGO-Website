@@ -49,6 +49,12 @@ export default function BloodDonationForm() {
         title: 'Error',
         description: 'Please check the form for errors and try again.',
       });
+    } else if (state.message && !state.success) {
+        toast({
+            variant: "destructive",
+            title: "Submission Error",
+            description: state.message,
+        });
     }
   }, [state, toast]);
 
@@ -95,7 +101,7 @@ export default function BloodDonationForm() {
               />
             </PopoverContent>
           </Popover>
-          <Input type="hidden" name="dob" value={dob?.toISOString()} />
+          <Input type="hidden" name="dob" value={dob?.toISOString() || ''} />
           {state.errors?.dob && <p className="text-sm text-destructive mt-1">{state.errors.dob[0]}</p>}
         </div>
         
