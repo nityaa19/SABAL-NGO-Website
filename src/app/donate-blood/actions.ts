@@ -63,20 +63,29 @@ export async function submitBloodDonationForm(
   try {
     const { firestore } = initializeFirebase();
     const donationsCollection = collection(firestore, 'bloodDonations');
+    
+    // Ensure we wait for the operation to complete
     await addDoc(donationsCollection, {
       ...validatedFields.data,
       submittedAt: new Date(),
     });
     
     return {
-      message: 'Thank you for registering to donate blood! Your registration confirmation will be sent to your email.',
+      message: 'Thank you for registering to donate blood! Your registration has been saved.',
       success: true,
     };
 
   } catch (error) {
     console.error('Error saving to Firestore:', error);
+    // Provide a more specific error message if possible
+    let errorMessage = 'An unexpected error occurred. Please try again later.';
+    if (error instanceof Error && 'code' in error) {
+      if ((error as {code: string}).code === 'permission-denied') {
+        errorMessage = 'There was a problem with saving your data due to security rules. Please contact support.';
+      }
+    }
     return {
-      message: 'An unexpected error occurred. Please try again later.',
+      message: errorMessage,
       success: false,
     }
   }
