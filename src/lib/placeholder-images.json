@@ -25,6 +25,12 @@
       "imageHint": "hopeful sunrise"
     },
     {
+      "id": "about-hero-image",
+      "description": "Hero image for the About Us page.",
+      "imageUrl": "/about/hero.jpg",
+      "imageHint": "community outreach"
+    },
+    {
       "id": "gallery-1",
       "description": "SABAL community event.",
       "imageUrl": "/gallery/gall1.jpg",

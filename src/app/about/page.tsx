@@ -15,7 +15,7 @@ const highlightText = (text: string) => {
 };
 
 export default function AboutPage() {
-    const aboutImage = PlaceHolderImages.find(img => img.id === 'vision-image');
+    const aboutImage = PlaceHolderImages.find(img => img.id === 'about-hero-image');
     
     const sections = [
         {
@@ -66,7 +66,7 @@ export default function AboutPage() {
                 fill
                 className="object-cover"
                 priority
-                data-ai-hint="hopeful people"
+                data-ai-hint={aboutImage.imageHint}
             />
         )}
         <div className="absolute inset-0 bg-black/60" />
