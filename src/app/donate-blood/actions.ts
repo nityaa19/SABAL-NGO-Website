@@ -1,31 +1,17 @@
-'use server';
+'use client';
 
 import { z } from 'zod';
 import { differenceInYears } from 'date-fns';
-import { initializeFirebase } from '@/firebase';
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { getFirestore, addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { FirestorePermissionError } from '@/firebase/errors';
 import { errorEmitter } from '@/firebase/error-emitter';
-
-export type BloodDonationFormState = {
-  message: string;
-  errors?: {
-    fullName?: string[];
-    email?: string[];
-    dob?: string[];
-    bloodGroup?: string[];
-    whatsapp?: string[];
-    mobile?: string[];
-    address?: string[];
-  };
-  success: boolean;
-};
+import { initializeFirebase } from '@/firebase';
 
 const phoneRegex = new RegExp(
   /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
 );
 
-const bloodDonationSchema = z.object({
+export const bloodDonationSchema = z.object({
   fullName: z.string().min(2, 'Full name must be at least 2 characters.'),
   email: z.string().email('Please enter a valid email address.'),
   dob: z.string().refine((dob) => new Date(dob) < new Date(), {
@@ -39,61 +25,36 @@ const bloodDonationSchema = z.object({
   address: z.string().min(10, 'Please enter your full address.'),
 });
 
-export async function submitBloodDonationForm(
-  prevState: BloodDonationFormState,
-  formData: FormData
-): Promise<BloodDonationFormState> {
+export type BloodDonationFormData = z.infer<typeof bloodDonationSchema>;
 
-  const validatedFields = bloodDonationSchema.safeParse({
-    fullName: formData.get('fullName'),
-    email: formData.get('email'),
-    dob: formData.get('dob'),
-    bloodGroup: formData.get('bloodGroup'),
-    whatsapp: formData.get('whatsapp'),
-    mobile: formData.get('mobile'),
-    address: formData.get('address'),
-  });
-
-  if (!validatedFields.success) {
-    return {
-      message: 'Validation failed. Please check the form fields.',
-      errors: validatedFields.error.flatten().fieldErrors,
-      success: false,
-    };
-  }
-
-  const { firestore } = initializeFirebase();
-  const donationsCollection = collection(firestore, 'bloodDonations');
-  const data = {
-    ...validatedFields.data,
-    submittedAt: serverTimestamp(),
-  };
-
+export async function saveBloodDonation(formData: BloodDonationFormData) {
   try {
-    await addDoc(donationsCollection, data);
-    return {
-      message: 'Thank you for registering to donate blood! Your registration has been saved.',
-      success: true,
+    const { firestore } = initializeFirebase();
+    const donationsCollection = collection(firestore, 'bloodDonations');
+    
+    const data = {
+      ...formData,
+      submittedAt: serverTimestamp(),
     };
-  } catch (serverError: any) {
-    // Check if it's a permissions error and create a contextual error
-    if (serverError.code === 'permission-denied') {
-      const permissionError = new FirestorePermissionError({
-        path: donationsCollection.path,
-        operation: 'create',
-        requestResourceData: data,
+
+    // Not awaiting this is intentional to allow for optimistic UI updates
+    addDoc(donationsCollection, data)
+      .catch((serverError) => {
+        console.error("Firestore write error:", serverError);
+        // Create and emit a more specific error for debugging
+        const permissionError = new FirestorePermissionError({
+          path: donationsCollection.path,
+          operation: 'create',
+          requestResourceData: data,
+        });
+        errorEmitter.emit('permission-error', permissionError);
+        // Re-throw a generic error to be caught by the caller
+        throw new Error('Failed to save donation due to a server error.');
       });
 
-      // This will throw the error to be displayed by the Next.js error overlay
-      // during development, giving us rich context.
-      throw permissionError;
-    }
-    
-    // Fallback for other errors
-    console.error('Error saving to Firestore:', serverError);
-    return {
-      message: 'An unexpected error occurred. Please try again later.',
-      success: false,
-    };
+  } catch (error) {
+    console.error('Error in saveBloodDonation:', error);
+    // Re-throw the error to be handled by the calling component
+    throw error;
   }
 }
