@@ -1,47 +1,18 @@
-/**
- * @fileoverview Firestore Security Rules for the SABAL NGO application.
- *
- * Core Philosophy:
- * This ruleset enforces a role-based access control model where only authorized
- * SABAL staff can read and write contact form submissions.
- *
- * Data Structure:
- * Contact form submissions are stored in the root-level collection
- * `/contactFormSubmissions/{contactFormSubmissionId}`.
- *
- * Key Security Decisions:
- * - Contact form submissions are not user-specific and are managed by SABAL staff.
- * - Only authorized personnel can read or write contact form submissions.  The specific
- *   mechanism for determining authorized personnel (e.g., a global admin role) is not
- *   defined in the provided information and requires further clarification.
- */
-
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    /**
-     * @description Controls access to contact form submissions.
-     * @path /contactFormSubmissions/{contactFormSubmissionId}
-     * @allow (get) - If the user is an authorized SABAL staff member.
-     * @allow (list) - If the user is an authorized SABAL staff member.
-     * @allow (create) - If the user is an authorized SABAL staff member.
-     * @allow (update) - If the user is an authorized SABAL staff member.
-     * @allow (delete) - If the user is an authorized SABAL staff member.
-     * @deny (get) - If the user is not an authorized SABAL staff member.
-     * @deny (list) - If the user is not an authorized SABAL staff member.
-     * @deny (create) - If the user is not an authorized SABAL staff member.
-     * @deny (update) - If the user is not an authorized SABAL staff member.
-     * @deny (delete) - If the user is not an authorized SABAL staff member.
-     * @principle Enforces role-based access control, restricting access to authorized personnel.
-     */
     match /contactFormSubmissions/{contactFormSubmissionId} {
-      // Placeholder: Replace with actual role-based check
-      allow get: if false; // TODO: Implement role-based access check for get
-      allow list: if false; // TODO: Implement role-based access check for list
-      allow create: if false; // TODO: Implement role-based access check for create
-      allow update: if false; // TODO: Implement role-based access check for update
-      allow delete: if false; // TODO: Implement role-based access check for delete
+      // Only authenticated users who are admins can manage contact submissions
+      allow read, write: if request.auth != null && request.auth.token.admin == true;
+    }
+
+    match /bloodDonations/{donationId} {
+      // Anyone can create a blood donation registration
+      allow create: if true;
+      
+      // Only admins can read, update, or delete registrations
+      allow read, update, delete: if request.auth != null && request.auth.token.admin == true;
     }
   }
 }

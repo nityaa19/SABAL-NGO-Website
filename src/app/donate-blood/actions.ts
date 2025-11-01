@@ -2,6 +2,8 @@
 
 import { z } from 'zod';
 import { differenceInYears } from 'date-fns';
+import { initializeFirebase } from '@/firebase';
+import { addDoc, collection } from 'firebase/firestore';
 
 export type BloodDonationFormState = {
   message: string;
@@ -58,11 +60,24 @@ export async function submitBloodDonationForm(
     };
   }
 
-  console.log('Blood donation form submitted successfully:');
-  console.log(validatedFields.data);
+  try {
+    const { firestore } = initializeFirebase();
+    const donationsCollection = collection(firestore, 'bloodDonations');
+    await addDoc(donationsCollection, {
+      ...validatedFields.data,
+      submittedAt: new Date(),
+    });
+    
+    return {
+      message: 'Thank you for registering to donate blood! Your registration confirmation will be sent to your email.',
+      success: true,
+    };
 
-  return {
-    message: 'Thank you for registering to donate blood! Your registration confirmation will be sent to your email.',
-    success: true,
-  };
+  } catch (error) {
+    console.error('Error saving to Firestore:', error);
+    return {
+      message: 'An unexpected error occurred. Please try again later.',
+      success: false,
+    }
+  }
 }
