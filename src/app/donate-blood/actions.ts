@@ -3,7 +3,7 @@
 import { z } from 'zod';
 import { differenceInYears } from 'date-fns';
 import { initializeFirebase } from '@/firebase';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 
 export type BloodDonationFormState = {
   message: string;
@@ -67,7 +67,7 @@ export async function submitBloodDonationForm(
     // Ensure we wait for the operation to complete
     await addDoc(donationsCollection, {
       ...validatedFields.data,
-      submittedAt: new Date(),
+      submittedAt: serverTimestamp(),
     });
     
     return {
