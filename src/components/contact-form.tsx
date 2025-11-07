@@ -48,19 +48,24 @@ export default function ContactForm() {
     }
 
     try {
-      submitContactForm(validatedFields.data);
-      setSuccess(true);
-      toast({
-        title: 'Message Sent!',
-        description: 'Thank you for reaching out. We will get back to you soon!',
-      });
-      formRef.current?.reset();
-    } catch (error) {
+      const result = await submitContactForm(validatedFields.data);
+      
+      if (result.success) {
+        setSuccess(true);
+        toast({
+          title: 'Message Sent!',
+          description: 'Thank you for reaching out. We will get back to you soon!',
+        });
+        formRef.current?.reset();
+      } else {
+        throw new Error(result.message || 'An unknown error occurred.');
+      }
+    } catch (error: any) {
       console.error(error);
       toast({
         variant: "destructive",
         title: "Submission Error",
-        description: "An unexpected error occurred. Please try again later.",
+        description: error.message || "An unexpected error occurred. Please try again later.",
       });
     } finally {
       setIsSubmitting(false);
