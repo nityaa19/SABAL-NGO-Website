@@ -2,9 +2,7 @@
 
 import { z } from 'zod';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
-import { initializeFirebase } from '@/firebase';
-import { FirestorePermissionError } from '@/firebase/errors';
-import { errorEmitter } from '@/firebase/error-emitter';
+import { initializeFirebase } from '@/firebase/admin'; // Use the admin SDK
 import nodemailer from 'nodemailer';
 
 const contactFormSchema = z.object({
@@ -24,31 +22,31 @@ export async function submitContactForm(formData: ContactFormData) {
   }
   
   const {name, email, subject, message} = validatedFields.data;
+  let firestoreError = false;
 
   // 2. Save to Firestore
-  const { firestore } = initializeFirebase();
-  const submissionsCollection = collection(firestore, 'contactFormSubmissions');
-
-  const dataToSave = {
-    name,
-    email,
-    subject,
-    message,
-    submissionDate: serverTimestamp(),
-  };
-
   try {
+    const { firestore } = initializeFirebase();
+    const submissionsCollection = collection(firestore, 'contactFormSubmissions');
+  
+    const dataToSave = {
+      name,
+      email,
+      subject,
+      message,
+      submissionDate: serverTimestamp(),
+    };
+    
     await addDoc(submissionsCollection, dataToSave);
   } catch (serverError: any) {
     console.error("Firestore write error:", serverError);
-    const permissionError = new FirestorePermissionError({
-      path: submissionsCollection.path,
-      operation: 'create',
-      requestResourceData: dataToSave,
-    });
-    errorEmitter.emit('permission-error', permissionError);
-    // Don't return here, let the email sending attempt continue if desired,
-    // but the final success message will reflect the DB failure.
+    firestoreError = true;
+    // We won't rethrow, but we'll let the email part fail and report based on that.
+  }
+
+  // If DB write failed, don't attempt to send email and return a DB error.
+  if (firestoreError) {
+      return { success: false, message: 'Your message could not be saved to the database. Please try again later.' };
   }
 
   // 3. Send email notification
