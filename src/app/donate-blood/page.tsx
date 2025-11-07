@@ -4,13 +4,20 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Phone } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Donate Blood | SABAL',
+  description: 'Become a blood donor with SABAL. Your donation can save lives. Register now through our simple form and become a hero in your community.',
+  keywords: ['blood donation', 'donate blood', 'SABAL blood drive', 'blood donor registration', 'save lives'],
+};
 
 export default function DonateBloodPage() {
   const bloodDonationImage = PlaceHolderImages.find((img) => img.id === 'blood-donation-hero');
 
   return (
-    <div>
-      <section className="relative h-[60vh] w-full">
+    <div className="animate-fadeIn">
+      <section className="relative h-[50vh] md:h-[60vh] w-full">
         {bloodDonationImage && (
           <Image
             src={bloodDonationImage.imageUrl}
@@ -23,13 +30,13 @@ export default function DonateBloodPage() {
         )}
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
-          <h1 className="text-4xl md:text-5xl font-headline font-bold tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-headline font-bold tracking-tight animate-slideUp">
             रक्तदान इन्सानियत की पहचान, आइए मिलकर करें रक्तदान
           </h1>
-          <p className="mt-4 max-w-2xl text-2xl md:text-3xl text-primary-foreground/90 font-semibold">
+          <p className="mt-4 max-w-2xl text-2xl md:text-3xl text-primary-foreground/90 font-semibold animate-slideUp delay-200">
             &quot; मिले खून मेरा तुम्हारा तो खून बने हमारा &quot;
           </p>
-          <Button asChild size="lg" className="mt-8 transition-transform duration-300 hover:scale-105">
+          <Button asChild size="lg" className="mt-8 transition-transform duration-300 hover:scale-105 animate-slideUp delay-300">
             <Link href="#register-form">Register Now | पंजीकरण करें</Link>
           </Button>
         </div>
@@ -39,7 +46,7 @@ export default function DonateBloodPage() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-5 gap-12 items-start">
 
-            <div className="lg:col-span-3 bg-background p-8 md:p-12 rounded-lg shadow-lg">
+            <div className="lg:col-span-3 bg-background p-6 sm:p-8 md:p-12 rounded-lg shadow-lg">
               <h2 className="text-3xl font-bold font-headline mb-2">Blood Donation Registration</h2>
                <p className="text-muted-foreground mb-8">
                 आपका नाम, मोबाइल नंबर और उम्र अनिवार्य है
@@ -57,11 +64,11 @@ export default function DonateBloodPage() {
                   <h4 className="font-semibold text-foreground mb-2">अधिक जानकारी के लिए कृपया संपर्क करें</h4>
                   <div className="flex items-center gap-3 text-muted-foreground">
                       <Phone className="h-5 w-5 text-primary"/>
-                      <a href="tel:+918987162005" className="hover:text-primary">+91-8987162005</a>
+                      <a href="tel:+918987162005" className="hover:text-primary transition-colors duration-300">+91-8987162005</a>
                   </div>
                    <div className="flex items-center gap-3 mt-2 text-muted-foreground">
                       <Phone className="h-5 w-5 text-primary"/>
-                      <a href="tel:+918987162006" className="hover:text-primary">+91-8987162006</a>
+                      <a href="tel:+918987162006" className="hover:text-primary transition-colors duration-300">+91-8987162006</a>
                   </div>
               </div>
             </div>

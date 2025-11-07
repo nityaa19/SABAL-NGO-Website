@@ -2,6 +2,13 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { BadgeCheck, Building, Goal, Target, Eye } from 'lucide-react';
 import Image from 'next/image';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About SABAL | Our Mission, Vision, and Story',
+  description: 'Learn about SABAL, a non-profit organization dedicated to empowering vulnerable communities. Discover our mission, vision, objectives, and our journey since 2016.',
+  keywords: ['about us', 'SABAL NGO', 'mission', 'vision', 'social development', 'non-profit', 'empowerment'],
+};
 
 const highlightText = (text: string) => {
     const parts = text.split(/(poverty|hunger|injustice|discrimination|unity|non-government|non-profitable|development|socio-economically)/gi);
@@ -57,8 +64,8 @@ export default function AboutPage() {
     ]
 
   return (
-    <div className="bg-background">
-      <section className="relative h-[60vh] w-full">
+    <div className="bg-background animate-fadeIn">
+      <section className="relative h-[50vh] md:h-[60vh] w-full">
         {aboutImage && (
             <Image
                 src={aboutImage.imageUrl}
@@ -71,17 +78,17 @@ export default function AboutPage() {
         )}
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center text-white">
-          <h1 className="text-4xl font-bold md:text-6xl font-headline">About SABAL</h1>
-          <p className="mt-4 max-w-2xl text-lg text-primary-foreground/90">
+          <h1 className="text-4xl font-bold md:text-6xl font-headline animate-slideUp">About SABAL</h1>
+          <p className="mt-4 max-w-2xl text-lg text-primary-foreground/90 animate-slideUp delay-200">
             Learn about our mission, vision, and commitment to building a better society.
           </p>
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-20 md:py-28">
+      <section className="container mx-auto px-4 py-16 md:py-28">
         <div className="space-y-24">
           {sections.map((section, index) => (
-            <div key={section.title} className={`grid md:grid-cols-5 gap-16 items-center`}>
+            <div key={section.title} className={`grid md:grid-cols-5 gap-12 md:gap-16 items-center`}>
                <div className={`overflow-hidden rounded-lg shadow-xl group ${index % 2 !== 0 ? 'md:order-2' : ''} md:col-span-2`}>
                 {section.image && (
                     <Image
@@ -108,14 +115,14 @@ export default function AboutPage() {
         </div>
       </section>
       
-      <section className="bg-secondary py-20 md:py-28">
+      <section className="bg-secondary py-16 md:py-28">
         <div className="container mx-auto px-4">
             <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl font-headline">
                 Our History & Registration
             </h2>
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {registrationDetails.map(detail => (
-                    <Card key={detail.title} className="text-center transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-xl bg-background">
+                    <Card key={detail.title} className="text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl bg-background">
                         <CardHeader className="items-center">
                            {detail.icon}
                             <CardTitle className='pt-2 font-headline text-xl'>{detail.title}</CardTitle>

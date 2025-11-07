@@ -2,6 +2,13 @@ import ContactForm from '@/components/contact-form';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import React from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact Us | SABAL NGO',
+  description: 'Get in touch with SABAL. Send us a message, find our address, or contact us via phone or email. We would love to hear from you!',
+  keywords: ['contact SABAL', 'get in touch', 'SABAL address', 'NGO contact', 'volunteer'],
+};
 
 export default function ContactPage() {
   const officeContacts = [
@@ -17,7 +24,7 @@ export default function ContactPage() {
   ];
 
   const InfoCard = ({ icon, title, children }: { icon: React.ReactNode, title: string, children: React.ReactNode }) => (
-    <Card className="transform-gpu transition-all duration-300 hover:-translate-y-1 hover:shadow-xl bg-card">
+    <Card className="transition-all duration-300 hover:-translate-y-1 hover:shadow-xl bg-card">
       <CardHeader className="flex flex-row items-center gap-4 space-y-0">
         <div className="p-3 bg-primary/10 rounded-full">
           {icon}
@@ -31,17 +38,17 @@ export default function ContactPage() {
   );
 
   return (
-    <div className="bg-secondary/20">
-      <div className="container mx-auto px-4 py-20 md:py-28">
+    <div className="bg-secondary/20 animate-fadeIn">
+      <div className="container mx-auto px-4 py-16 md:py-28">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-extrabold font-headline">Get In Touch</h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+          <h1 className="text-4xl md:text-5xl font-extrabold font-headline animate-slideUp">Get In Touch</h1>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground animate-slideUp delay-200">
             We&apos;d love to hear from you! Whether you have a question, a suggestion, or want to get involved, please reach out.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-16 items-start">
-          <div className="lg:col-span-3 bg-background p-8 md:p-12 rounded-2xl shadow-lg">
+        <div className="grid lg:grid-cols-5 gap-12 md:gap-16 items-start">
+          <div className="lg:col-span-3 bg-background p-6 sm:p-8 md:p-12 rounded-2xl shadow-lg">
             <h2 className="text-3xl font-bold font-headline mb-8">Send a Message</h2>
             <ContactForm />
           </div>
@@ -79,7 +86,7 @@ export default function ContactPage() {
           </div>
         </div>
         
-        <div className="mt-24">
+        <div className="mt-20 md:mt-24">
             <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-8">Our Location</h2>
             <div className="rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 hover:shadow-primary/20">
                  <iframe 

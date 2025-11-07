@@ -24,7 +24,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col animate-fadeIn">
       <section className="relative h-[90vh] w-full">
         <Image
           src="/landing/herodesk.jpg"
@@ -35,14 +35,14 @@ export default function Home() {
           data-ai-hint="community volunteers"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
-        <div className="relative z-10 flex h-full flex-col items-center justify-end pb-24 space-y-6 px-4 text-center text-white">
-          <h1 className="text-4xl md:text-6xl font-extrabold font-headline tracking-tight max-w-4xl">
+        <div className="relative z-10 flex h-full flex-col items-center justify-end pb-20 md:pb-24 space-y-6 px-4 text-center text-white">
+          <h1 className="text-4xl md:text-6xl font-extrabold font-headline tracking-tight max-w-4xl animate-slideUp">
             Bringing Ability and Liberty Through Social Action
           </h1>
-          <p className="max-w-2xl text-lg md:text-xl text-primary-foreground/90">
+          <p className="max-w-2xl text-lg md:text-xl text-primary-foreground/90 animate-slideUp animation-delay-200">
             Join SABAL in our mission to create an empowered, poverty-free nation where every individual lives with dignity and justice.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slideUp animation-delay-300">
             <Button asChild size="lg" className="transition-transform duration-300 hover:scale-105 group">
               <Link href="/contact">Get Involved <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" /></Link>
             </Button>
@@ -63,7 +63,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="text-center transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border-0">
+              <Card key={index} className="text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border-0">
                 <CardHeader className="items-center">
                   <div className="bg-primary/10 p-4 rounded-full">{feature.icon}</div>
                   <CardTitle className="pt-4 text-2xl font-bold font-headline">{feature.title}</CardTitle>

@@ -1,9 +1,16 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ShieldCheck } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | SABAL',
+  description: 'Read the official privacy policy for SABAL. We are committed to protecting your personal data and being transparent about how we use it.',
+  keywords: ['privacy policy', 'data protection', 'user privacy', 'SABAL policy'],
+};
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="bg-background">
+    <div className="bg-background animate-fadeIn">
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="flex flex-col items-center text-center">
           <h1 className="text-4xl md:text-5xl font-headline font-bold">Privacy Policy</h1>

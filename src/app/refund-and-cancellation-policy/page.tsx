@@ -1,9 +1,16 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { RotateCcw } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Refund & Cancellation Policy | SABAL',
+  description: 'Understand the refund and cancellation policy for donations made to SABAL. Learn about the conditions for returns and how to cancel your order.',
+  keywords: ['refund policy', 'cancellation policy', 'donation refund', 'SABAL policy'],
+};
 
 export default function RefundCancellationPolicyPage() {
   return (
-    <div className="bg-background">
+    <div className="bg-background animate-fadeIn">
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="flex flex-col items-center text-center">
           <h1 className="text-4xl md:text-5xl font-headline font-bold">Refund &amp; Cancellation Policy</h1>

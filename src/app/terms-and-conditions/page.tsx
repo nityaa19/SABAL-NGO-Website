@@ -1,9 +1,16 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { FileText } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Terms & Conditions | SABAL',
+  description: 'Read the terms and conditions for using the SABAL website and services. Understand your rights and obligations when you interact with our platform.',
+  keywords: ['terms and conditions', 'terms of service', 'SABAL terms', 'legal'],
+};
 
 export default function TermsAndConditionsPage() {
   return (
-    <div className="bg-background">
+    <div className="bg-background animate-fadeIn">
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="flex flex-col items-center text-center">
           <h1 className="text-4xl md:text-5xl font-headline font-bold">Terms &amp; Conditions</h1>
