@@ -8,9 +8,16 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { submitContactForm, contactFormSchema } from '@/app/contact/actions';
+import { submitContactForm } from '@/app/contact/actions';
 import { Alert, AlertDescription, AlertTitle } from './ui/alert';
 import { Terminal } from 'lucide-react';
+
+const contactFormSchema = z.object({
+  name: z.string().min(2, 'Name must be at least 2 characters.'),
+  email: z.string().email('Please enter a valid email address.'),
+  subject: z.string().min(5, 'Subject must be at least 5 characters.'),
+  message: z.string().min(10, 'Message must be at least 10 characters.'),
+});
 
 export default function ContactForm() {
   const { toast } = useToast();
@@ -27,10 +34,10 @@ export default function ContactForm() {
 
     const formData = new FormData(event.currentTarget);
     const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      subject: formData.get('subject'),
-      message: formData.get('message'),
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      subject: formData.get('subject') as string,
+      message: formData.get('message') as string,
     };
 
     const validatedFields = contactFormSchema.safeParse(data);

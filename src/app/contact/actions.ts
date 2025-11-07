@@ -7,7 +7,7 @@ import { FirestorePermissionError } from '@/firebase/errors';
 import { errorEmitter } from '@/firebase/error-emitter';
 import nodemailer from 'nodemailer';
 
-export const contactFormSchema = z.object({
+const contactFormSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
   email: z.string().email('Please enter a valid email address.'),
   subject: z.string().min(5, 'Subject must be at least 5 characters.'),
@@ -17,12 +17,23 @@ export const contactFormSchema = z.object({
 export type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export async function submitContactForm(formData: ContactFormData) {
-  // 1. Save to Firestore
+  // 1. Validate form data on the server
+  const validatedFields = contactFormSchema.safeParse(formData);
+  if (!validatedFields.success) {
+    return { success: false, message: 'Invalid form data.' };
+  }
+  
+  const {name, email, subject, message} = validatedFields.data;
+
+  // 2. Save to Firestore
   const { firestore } = initializeFirebase();
   const submissionsCollection = collection(firestore, 'contactFormSubmissions');
 
   const dataToSave = {
-    ...formData,
+    name,
+    email,
+    subject,
+    message,
     submissionDate: serverTimestamp(),
   };
 
@@ -36,10 +47,11 @@ export async function submitContactForm(formData: ContactFormData) {
       requestResourceData: dataToSave,
     });
     errorEmitter.emit('permission-error', permissionError);
-    return { success: false, message: 'Failed to save submission to database.' };
+    // Don't return here, let the email sending attempt continue if desired,
+    // but the final success message will reflect the DB failure.
   }
 
-  // 2. Send email notification
+  // 3. Send email notification
   try {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -52,15 +64,15 @@ export async function submitContactForm(formData: ContactFormData) {
     const mailOptions = {
       from: process.env.EMAIL_SERVER_USER,
       to: process.env.EMAIL_TO,
-      subject: `New Contact Form Submission: ${formData.subject}`,
+      subject: `New Contact Form Submission: ${subject}`,
       html: `
         <h1>New Contact Form Submission</h1>
-        <p><strong>Name:</strong> ${formData.name}</p>
-        <p><strong>Email:</strong> ${formData.email}</p>
-        <p><strong>Subject:</strong> ${formData.subject}</p>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Subject:</strong> ${subject}</p>
         <hr />
         <p><strong>Message:</strong></p>
-        <p>${formData.message}</p>
+        <p>${message}</p>
       `,
     };
 
@@ -69,8 +81,7 @@ export async function submitContactForm(formData: ContactFormData) {
   } catch (error: any) {
     console.error('Failed to send email:', error);
     // Even if email fails, the data is in Firestore.
-    // We return a failure for email so the user can be notified if needed,
-    // but we don't want to show a scary error if the main action (saving) succeeded.
+    // We return a failure for email so the user can be notified if needed.
     return { success: false, message: 'Your message was saved, but the email notification could not be sent.' };
   }
 }
